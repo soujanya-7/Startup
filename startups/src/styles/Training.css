@@ -1,0 +1,59 @@
+.training-section {
+  padding: 8rem 2rem; /* increased from 6rem to 8rem */
+  background: #f5faff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem; /* increased spacing between rows */
+}
+
+.training-row {
+  display: flex;
+  align-items: center;
+  gap: 4rem; /* more space between text and image */
+  max-width: 1300px; /* wider container */
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.training-text {
+  flex: 1 1 450px; /* slightly bigger text column */
+}
+
+.training-heading {
+  font-size: 2.5rem; /* bigger heading */
+  color: #0a6eff;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.training-description {
+  font-size: 1.2rem; /* slightly bigger text */
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.training-button {
+  padding: 0.9rem 2.2rem; /* bigger button */
+  font-size: 1.1rem;
+  background-color: #0a6eff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.training-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.training-image {
+  flex: 1 1 450px; /* bigger image column */
+  max-width: 550px; /* increase max image width */
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}

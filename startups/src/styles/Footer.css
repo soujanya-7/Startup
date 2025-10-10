@@ -1,0 +1,61 @@
+.footer {
+  background-color: #e6f0ff; /* Light blue background matching Hero section */
+  color: #0a3dff; /* Darker blue for text */
+  padding: 4rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+  min-width: 180px;
+}
+
+.footer-column h4 {
+  font-size: 1.2rem;
+  color: #0a6eff; /* Primary blue for headings */
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.footer-column ul li:hover {
+  color: #0a3dff; /* Slightly darker blue on hover */
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer-social a {
+  color: #0a6eff; /* Primary blue for social icons */
+  font-size: 1.3rem;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #0a3dff; /* Darker blue hover */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: #555;
+}

@@ -1,0 +1,110 @@
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 8rem 1rem 8rem; /* reduced top padding */
+  background: #f5f9ff;
+  min-height: 88vh;
+  overflow: hidden;
+  position: relative;
+  gap: 4rem; /* ensure a clear gap between text and image */
+}
+
+/* LEFT CONTENT */
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+  z-index: 2;
+  margin-top: -1rem; /* slight upward lift */
+}
+
+.hero-heading {
+  font-size: 3.3rem;
+  line-height: 1.2;
+  color: #0a47ff;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.hero-subtext {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.hero-button {
+  padding: 1.2rem 2.8rem;
+  background: linear-gradient(90deg, #0a47ff, #4f8dff);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 10px 25px rgba(10, 71, 255, 0.3);
+}
+
+/* RIGHT SLIDESHOW */
+.hero-image-slider {
+  flex: 1.1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+  position: relative;
+}
+
+.hero-image {
+  width: 700px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 25px;
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.25);
+  transition: transform 0.8s ease, box-shadow 0.8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 3rem 2rem;
+    text-align: center;
+    gap: 2rem; /* vertical gap between text and image */
+  }
+
+  .hero-content {
+    margin-top: 0;
+  }
+
+  /* Image container adjustments for smaller screens */
+  .hero-image-slider {
+    flex: none;
+    justify-content: center; /* center image under text */
+    margin-left: 0; /* remove left margin for centered layout */
+    width: 100%;
+  }
+
+  .hero-image {
+    width: 90%; /* fit smaller screens */
+    height: auto;
+    max-height: 400px;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: scale(1);
+    animation: zoomEffect 5s ease-in-out forwards;
+  }
+}
