@@ -12,11 +12,29 @@
 }
 
 .registration-stepper {
+  position: relative; /* for baseline */
   display: flex;
-  align-items: center;
+  align-items: center; /* center items vertically on baseline */
   justify-content: center;
   gap: 3rem;
-  flex-wrap: wrap; /* mobile fallback */
+  flex-wrap: nowrap; /* keep in a single line */
+  overflow-x: auto; /* allow horizontal scroll on small screens */
+  padding: 1.5rem 0 0.75rem; /* space for line and scrollbar */
+  min-height: 300px; /* ensure room for up/down stagger */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Center baseline */
+.registration-stepper::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 4px;
+  background: #0a6eff; /* brand line */
+  opacity: 0.25; /* subtle */
+  border-radius: 2px;
 }
 
 .registration-step-card {
@@ -24,9 +42,18 @@
   padding: 2rem 1.5rem;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  flex: 1 1 200px;
+  flex: 0 0 240px; /* fixed card width to avoid wrapping */
   position: relative;
   text-align: center;
+}
+
+/* Alternate the vertical position: one up, one down */
+.registration-step-card.step-up {
+  margin-top: -70px; /* above baseline */
+}
+
+.registration-step-card.step-down {
+  margin-top: 70px; /* below baseline */
 }
 
 .registration-step-number {
@@ -59,16 +86,17 @@
   width: 80px;
   height: 4px;
   background: #0a6eff;
-  margin: 0 -40px; /* half of width to connect step cards */
+  margin: 0; /* inline connectors between cards */
+  flex: 0 0 80px; /* fixed connector width */
 }
 
 @media (max-width: 768px) {
   .registration-stepper {
-    flex-direction: column;
+    /* keep single row with scroll on mobile too */
+    gap: 1.5rem;
+    min-height: 260px;
   }
-  .registration-connector {
-    width: 4px;
-    height: 50px;
-    margin: -25px 0; /* vertical spacing */
+  .registration-stepper::before {
+    height: 3px;
   }
 }

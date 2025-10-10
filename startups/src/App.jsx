@@ -1,23 +1,22 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Services from "./components/Services";
-import Registration from "./components/Registration";
-import Training from "./components/Training";
-import CTA from "./components/CTA";
-import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
+import Home from "./pages/Home";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 
 function App() {
   return (
     <div>
       <Header />
-      <Hero />
-      <Services />
-      <Registration />
-      <Training />
-      <CTA />       
-      <FAQ />       
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
       <Footer />
     </div>
   );

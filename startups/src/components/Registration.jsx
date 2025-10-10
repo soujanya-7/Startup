@@ -19,7 +19,7 @@ const Registration = () => {
         {stepsData.map((step, index) => (
           <React.Fragment key={index}>
             <motion.div
-              className="registration-step-card"
+              className={`registration-step-card ${index % 2 === 0 ? 'step-up' : 'step-down'}`}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
