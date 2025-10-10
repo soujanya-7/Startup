@@ -5,7 +5,7 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaYoutube } from "re
 const Footer = () => {
   return (
     <footer className="footer">
-      {/* Social & Brand */}
+     
       <div className="footer-column">
         <h4>Propel Foundry</h4>
         <div className="footer-social">
@@ -17,7 +17,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Platform */}
+      
       <div className="footer-column">
         <h4>Platform</h4>
         <ul>
@@ -29,7 +29,7 @@ const Footer = () => {
         </ul>
       </div>
 
-      {/* Resources */}
+      
       <div className="footer-column">
         <h4>Resources</h4>
         <ul>

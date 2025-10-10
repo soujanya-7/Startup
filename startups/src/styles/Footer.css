@@ -29,12 +29,16 @@
 .footer-column ul li {
   margin-bottom: 0.8rem;
   font-size: 0.95rem;
-  cursor: pointer;
+}
+
+.footer-column ul li a {
+  color: #0a3dff; /* Default link color */
+  text-decoration: none;
   transition: color 0.3s;
 }
 
-.footer-column ul li:hover {
-  color: #0a3dff; /* Slightly darker blue on hover */
+.footer-column ul li a:hover {
+  color: #0a6eff; /* Slightly lighter blue on hover */
 }
 
 .footer-social {
@@ -58,4 +62,5 @@
   margin-top: 3rem;
   font-size: 0.85rem;
   color: #555;
+  width: 100%;
 }

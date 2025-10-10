@@ -14,23 +14,27 @@ const stepsData = [
 const Registration = () => {
   return (
     <section className="registration-section" id="registration">
-      <h2 className="registration-heading">How It Works</h2>
+      <h2 className="registration-heading">How We Works</h2>
       <div className="registration-stepper">
+        {/* Vertical central line */}
+        <div className="registration-vertical-line"></div>
+
         {stepsData.map((step, index) => (
-          <React.Fragment key={index}>
-            <motion.div
-              className={`registration-step-card ${index % 2 === 0 ? 'step-up' : 'step-down'}`}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-            >
-              <div className="registration-step-number">{step.number}</div>
-              <h3 className="registration-step-title">{step.title}</h3>
-              <p className="registration-step-description">{step.description}</p>
-            </motion.div>
-            {index < stepsData.length - 1 && <div className="registration-connector"></div>}
-          </React.Fragment>
+          <motion.div
+            key={index}
+            className={`registration-step-card ${index % 2 === 0 ? "left" : "right"}`}
+            initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: index * 0.2 }}
+          >
+            {/* Connector line from central vertical line */}
+            <div className={`registration-connector ${index % 2 === 0 ? "left" : "right"}`}></div>
+
+            <div className="registration-step-number">{step.number}</div>
+            <h3 className="registration-step-title">{step.title}</h3>
+            <p className="registration-step-description">{step.description}</p>
+          </motion.div>
         ))}
       </div>
     </section>
