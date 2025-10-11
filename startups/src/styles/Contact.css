@@ -1,10 +1,8 @@
 /* Contact section styling */
 .contact-section {
   padding: 80px 20px;
-  background: radial-gradient(1200px 400px at 10% 0%, rgba(59,130,246,0.15), transparent),
-              radial-gradient(1200px 400px at 90% 100%, rgba(99,102,241,0.18), transparent),
-              linear-gradient(180deg, #0b1221 0%, #0f172a 100%);
-  color: #e2e8f0; /* slate-200 */
+  background: #ffffff; /* match Home white */
+  color: #0f172a; /* dark slate text */
 }
 
 .contact-container {
@@ -16,23 +14,43 @@
 .contact-card {
   margin: 0 auto;
   max-width: 760px;
-  background: rgba(15, 23, 42, 0.7);
-  border: 1px solid rgba(148, 163, 184, 0.15);
-  border-radius: 18px;
+  background: #ffffff; /* white card */
+  border-radius: 16px;
   padding: 32px 24px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.06);
-  backdrop-filter: blur(6px);
+  /* gradient border trick */
+  border: 1px solid transparent;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(135deg, #0a47ff, #4f8dff) border-box;
+  box-shadow: 0 12px 24px rgba(2, 6, 23, 0.06);
   animation: contact-fade-in 700ms ease-out both;
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+
+.contact-card:hover {
+  box-shadow: 0 18px 36px rgba(2, 6, 23, 0.10);
+  transform: translateY(-2px);
 }
 
 .contact-title {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 10px;
+  color: #0a47ff; /* brand blue */
+}
+
+.contact-title::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 4px;
+  margin: 8px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0a47ff, #4f8dff);
 }
 
 .contact-subtitle {
-  color: #94a3b8; /* slate-400 */
+  color: #475569; /* slate-600 */
   margin-bottom: 24px;
 }
 
@@ -53,69 +71,103 @@
 }
 
 .contact-input {
-  padding: 12px 14px;
-  border-radius: 8px;
-  border: 1px solid #334155; /* slate-700 */
-  background: #0b1221;
-  color: #e2e8f0;
+  padding: 14px 16px;
+  border-radius: 12px;                 /* softer corners */
+  border: 1px solid #cbd5e1;           /* slate-300 */
+  border-left-width: 4px;              /* accent bar */
+  border-left-color: #e2e8f0;          /* subtle by default */
+  background: #f8fafc;                 /* light tint */
+  color: #0f172a;
   width: 100%;
   max-width: 600px;                 /* readable width */
   min-width: 260px;
   outline: none;
   box-sizing: border-box;
-  transition: border-color 180ms ease, box-shadow 180ms ease, transform 140ms ease;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 140ms ease, background 180ms ease;
 }
 
 .contact-input:focus {
   border-color: #3b82f6; /* blue-500 */
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2), 0 12px 24px rgba(2, 6, 23, 0.06);
   transform: translateY(-1px);
+  border-left-color: #0a47ff;          /* blue accent when focused */
+}
+
+.contact-input:hover {
+  background: #ffffff;                 /* subtle hover lighten */
+  border-color: #94a3b8;               /* slate-400 */
+}
+
+.contact-input::placeholder {
+  color: #94a3b8;                      /* softer placeholder */
 }
 
 .contact-textarea {
-  padding: 12px 14px;
-  border-radius: 8px;
-  border: 1px solid #334155; /* slate-700 */
-  background: #0b1221;
-  color: #e2e8f0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  border-left-width: 4px;
+  border-left-color: #e2e8f0;
+  background: #f8fafc;
+  color: #0f172a;
   width: 100%;
   max-width: 600px;
   min-width: 260px;
+  min-height: 140px;
+  resize: vertical;                    /* keep vertical resize only */
   outline: none;
   box-sizing: border-box;
-  transition: border-color 180ms ease, box-shadow 180ms ease, transform 140ms ease;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 140ms ease, background 180ms ease;
 }
 
 .contact-textarea:focus {
   border-color: #3b82f6; /* blue-500 */
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2), 0 12px 24px rgba(2, 6, 23, 0.06);
   transform: translateY(-1px);
+  border-left-color: #0a47ff;
+}
+
+.contact-textarea:hover {
+  background: #ffffff;
+  border-color: #94a3b8;
+}
+
+.contact-textarea::placeholder {
+  color: #94a3b8;
 }
 
 .contact-select {
   padding: 12px 14px;
-  border-radius: 8px;
-  border: 1px solid #334155; /* slate-700 */
-  background: #0b1221;
-  color: #e2e8f0;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  border-left-width: 4px;
+  border-left-color: #e2e8f0;
+  background: #f8fafc;
+  color: #0f172a;
   width: 100%;
   max-width: 600px;
   min-width: 260px;
   outline: none;
   box-sizing: border-box;
-  transition: border-color 180ms ease, box-shadow 180ms ease, transform 140ms ease;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 140ms ease, background 180ms ease;
 }
 
 .contact-select:focus {
   border-color: #3b82f6; /* blue-500 */
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2), 0 12px 24px rgba(2, 6, 23, 0.06);
   transform: translateY(-1px);
+  border-left-color: #0a47ff;
+}
+
+.contact-select:hover {
+  background: #ffffff;
+  border-color: #94a3b8;
 }
 
 .contact-button {
   padding: 12px 18px;
   border-radius: 8px;
-  background: #3b82f6;
+  background: linear-gradient(90deg, #0a47ff, #4f8dff);
   border: none;
   color: white;
   font-weight: 600;
@@ -133,11 +185,11 @@
 
 .contact-direct {
   margin-top: 16px;
-  color: #94a3b8;
+  color: #475569;
 }
 
 .contact-direct a {
-  color: #60a5fa; /* blue-400 */
+  color: #0a47ff; /* brand blue */
   text-decoration: underline;
 }
 
@@ -151,15 +203,15 @@
 }
 
 .contact-status-success {
-  background: rgba(16, 185, 129, 0.15);
-  color: #34d399; /* green-400 */
-  border: 1px solid rgba(16, 185, 129, 0.35);
+  background: rgba(16, 185, 129, 0.12);
+  color: #065f46; /* teal-800 */
+  border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 .contact-status-error {
-  background: rgba(239, 68, 68, 0.15);
-  color: #f87171; /* red-400 */
-  border: 1px solid rgba(239, 68, 68, 0.35);
+  background: rgba(239, 68, 68, 0.12);
+  color: #7f1d1d; /* red-900 */
+  border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
 /* Entrance animation */

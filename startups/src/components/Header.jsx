@@ -15,8 +15,8 @@ const Header = () => {
       <div className="header-right">
         <nav className="nav-links">
           <a href="#/">Home</a>
-          <a href="#/">Services</a>
-          <a href="#community">Community</a>
+          <a href="#/services">Services</a>
+          <a href="#/community">Community</a>
           <a href="#/contact">Contact</a>
           <a href="#/about">About</a>
         </nav>

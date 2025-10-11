@@ -1,22 +1,17 @@
 .footer {
   background-color: #e6f0ff; /* Light blue background matching Hero section */
-  color: #0a3dff; /* Darker blue for text */
-  padding: 4rem 2rem;
+  color: #0a3dff;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2rem;
 }
 
 .footer-column {
   flex: 1 1 200px;
-  min-width: 180px;
 }
 
 .footer-column h4 {
   font-size: 1.2rem;
-  color: #0a6eff; /* Primary blue for headings */
-  margin-bottom: 1rem;
+  color: #0a6eff;
   font-weight: 600;
 }
 
@@ -27,7 +22,7 @@
 }
 
 .footer-column ul li {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
   font-size: 0.95rem;
 }
 

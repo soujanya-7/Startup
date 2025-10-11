@@ -1,8 +1,6 @@
 import React from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Services from "./components/Services";
-import Community from "./components/Community";
 import Training from "./components/Training";
 import CTA from "./components/CTA";
 import FAQ from "./components/FAQ";
@@ -19,6 +17,8 @@ function App() {
 
   const About = React.lazy(() => import("./pages/About"));
   const ContactPage = React.lazy(() => import("./pages/Contact"));
+  const ServicesPage = React.lazy(() => import("./pages/Services"));
+  const CommunityPage = React.lazy(() => import("./pages/Community"));
 
   return (
     <div>
@@ -28,11 +28,13 @@ function App() {
           <About />
         ) : route === "#/contact" ? (
           <ContactPage />
+        ) : route === "#/services" ? (
+          <ServicesPage />
+        ) : route === "#/community" ? (
+          <CommunityPage />
         ) : (
           <>
             <Hero />
-            <Services />
-            <Community />
             <Training />
             <CTA />
             <FAQ />

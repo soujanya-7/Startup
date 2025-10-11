@@ -106,11 +106,11 @@ const Contact = () => {
             <option value="Hackathon">Hackathon</option>
             <option value="Startups">Startups</option>
             <option value="General Inquiry">General Inquiry</option>
-            <option value="Partnership">Partnership</option>
+            <option value="Partnership">Mentorship</option>
           </select>
           <textarea
             className="contact-textarea"
-            placeholder="Write your description..."
+            placeholder="State your query..."
             rows="4"
             value={message}
             onChange={(e) => setMessage(e.target.value)}

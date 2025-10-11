@@ -73,7 +73,6 @@ const About = () => {
             { label: "Startups Supported", value: "120+" },
             { label: "Mentor Network", value: "60+" },
             { label: "Workshops Conducted", value: "85+" },
-            { label: "Avg. CSAT", value: "4.8/5" },
           ].map((s, idx) => (
             <motion.div
               key={idx}

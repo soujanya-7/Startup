@@ -3,12 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "../styles/Hero.css";
 
-import startupTeam from "../assets/startup-team.jpg";
-import mentorship from "../assets/mentorship.jpg";
-import businessGrowth from "../assets/gst.png";
-import networkingEvent from "../assets/networking.jpg";
+import dpiitImg from "../assets/dpiit registration.png";
+import gstImg from "../assets/gst registration.png";
+import mentoringImg from "../assets/mentoring.png";
+import networkingImg from "../assets/networking.png";
+import fundingImg from "../assets/startup funding.png";
 
-const images = [startupTeam, mentorship, businessGrowth, networkingEvent];
+const images = [dpiitImg, gstImg, mentoringImg, networkingImg, fundingImg];
 
 const Hero = () => {
   const [current, setCurrent] = useState(0);
@@ -42,19 +43,6 @@ const Hero = () => {
 
   return (
     <section className="hero-section" ref={ref}>
-      {/* Background bubbles */}
-      {[...Array(20)].map((_, i) => (
-        <div
-          key={i}
-          className="hero-bubble"
-          style={{
-            left: `${Math.random() * 100}%`,
-            animationDuration: `${5 + Math.random() * 10}s`,
-            width: `${5 + Math.random() * 15}px`,
-            height: `${5 + Math.random() * 15}px`,
-          }}
-        ></div>
-      ))}
 
       {/* Left Text Content */}
       <motion.div
@@ -69,19 +57,6 @@ const Hero = () => {
         <p className="hero-subtext">
           We help founders launch, scale, and succeed with strategic guidance, expert mentorship, and a powerful network.
         </p>
-
-        {/* Additional Hero Highlights */}
-        <div className="hero-highlights">
-          <div className="highlight">
-            <strong>Mentorship:</strong> Connect with experienced entrepreneurs.
-          </div>
-          <div className="highlight">
-            <strong>Funding Guidance:</strong> Navigate investors and capital.
-          </div>
-          <div className="highlight">
-            <strong>Market Strategy:</strong> Build scalable, profitable businesses.
-          </div>
-        </div>
 
         <motion.button 
           whileHover={{ scale: 1.05 }} 

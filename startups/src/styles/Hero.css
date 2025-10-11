@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: flex; /* slightly top */
   padding: 5.5rem 6rem 2rem 6rem; /* moderate top padding */
-  background: #fafbfc;
+  background: #ffffff; /* white background to match theme */
   min-height: 70vh;
   overflow: hidden;
   position: relative;
@@ -47,7 +47,7 @@
 
 .hero-subtext {
   font-size: 1.2rem;
-  color: #444;
+  color: #475569; /* slate-600 for better contrast on white */
   margin-bottom: 1.5rem;
 }
 
@@ -91,6 +91,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-right: 4%;
   height: 450px;
   position: relative;
 }
@@ -132,7 +133,7 @@
 }
 
 .hero-arrow.left { left: 8px; }
-.hero-arrow.right { right: -90px; }
+.hero-arrow.right { right: -75px; }
 
 .hero-arrow:hover {
   transform: translateY(-50%) scale(1.06);
