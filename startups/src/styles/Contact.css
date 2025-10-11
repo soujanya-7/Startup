@@ -1,0 +1,175 @@
+/* Contact section styling */
+.contact-section {
+  padding: 80px 20px;
+  background: radial-gradient(1200px 400px at 10% 0%, rgba(59,130,246,0.15), transparent),
+              radial-gradient(1200px 400px at 90% 100%, rgba(99,102,241,0.18), transparent),
+              linear-gradient(180deg, #0b1221 0%, #0f172a 100%);
+  color: #e2e8f0; /* slate-200 */
+}
+
+.contact-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-card {
+  margin: 0 auto;
+  max-width: 760px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 18px;
+  padding: 32px 24px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.06);
+  backdrop-filter: blur(6px);
+  animation: contact-fade-in 700ms ease-out both;
+}
+
+.contact-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.contact-subtitle {
+  color: #94a3b8; /* slate-400 */
+  margin-bottom: 24px;
+}
+
+.contact-hint {
+  color: #64748b; /* slate-500 */
+  font-size: 0.95rem;
+  margin-top: -8px;
+  margin-bottom: 16px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;            /* stack fields vertically */
+  gap: 14px;                         /* space between fields */
+  justify-content: flex-start;
+  align-items: center;               /* center fields */
+  margin-top: 8px;
+}
+
+.contact-input {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #334155; /* slate-700 */
+  background: #0b1221;
+  color: #e2e8f0;
+  width: 100%;
+  max-width: 600px;                 /* readable width */
+  min-width: 260px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 140ms ease;
+}
+
+.contact-input:focus {
+  border-color: #3b82f6; /* blue-500 */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  transform: translateY(-1px);
+}
+
+.contact-textarea {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #334155; /* slate-700 */
+  background: #0b1221;
+  color: #e2e8f0;
+  width: 100%;
+  max-width: 600px;
+  min-width: 260px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 140ms ease;
+}
+
+.contact-textarea:focus {
+  border-color: #3b82f6; /* blue-500 */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  transform: translateY(-1px);
+}
+
+.contact-select {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #334155; /* slate-700 */
+  background: #0b1221;
+  color: #e2e8f0;
+  width: 100%;
+  max-width: 600px;
+  min-width: 260px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 140ms ease;
+}
+
+.contact-select:focus {
+  border-color: #3b82f6; /* blue-500 */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  transform: translateY(-1px);
+}
+
+.contact-button {
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: #3b82f6;
+  border: none;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  width: auto;                       /* keep button compact */
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
+}
+
+.contact-button:hover {
+  background: #2563eb; /* blue-600 */
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(37, 99, 235, 0.35);
+}
+
+.contact-direct {
+  margin-top: 16px;
+  color: #94a3b8;
+}
+
+.contact-direct a {
+  color: #60a5fa; /* blue-400 */
+  text-decoration: underline;
+}
+
+/* Status badges */
+.contact-status {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.contact-status-success {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399; /* green-400 */
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.contact-status-error {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171; /* red-400 */
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+/* Entrance animation */
+@keyframes contact-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

@@ -14,14 +14,12 @@ const Header = () => {
       {/* RIGHT SECTION — Navigation + Button */}
       <div className="header-right">
         <nav className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#services">Services</a>
-          <a href="#solution">Our Solution</a>
-          <a href="#
-          ">Training</a>
-          <a href="#contact">Contact</a>
+          <a href="#/">Home</a>
+          <a href="#/">Services</a>
+          <a href="#community">Community</a>
+          <a href="#/contact">Contact</a>
+          <a href="#/about">About</a>
         </nav>
-        <button className="header-button">Join Us</button>
       </div>
     </header>
   );

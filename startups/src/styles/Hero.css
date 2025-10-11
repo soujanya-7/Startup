@@ -1,13 +1,32 @@
+/* HERO SECTION */
 .hero-section {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 3rem 8rem 1rem 8rem; /* reduced top padding */
-  background: #f5f9ff;
-  min-height: 88vh;
+  align-items: flex; /* slightly top */
+  padding: 5.5rem 6rem 2rem 6rem; /* moderate top padding */
+  background: #fafbfc;
+  min-height: 70vh;
   overflow: hidden;
   position: relative;
-  gap: 4rem; /* ensure a clear gap between text and image */
+  gap: rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1a1a1a;
+}
+
+/* Bubbles */
+.hero-bubble {
+  position: absolute;
+  bottom: -20px;
+  background: #0a47ff;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.3; }
+  50% { opacity: 0.6; }
+  100% { transform: translateY(-120vh) translateX(50px) rotate(360deg); opacity: 0; }
 }
 
 /* LEFT CONTENT */
@@ -15,7 +34,7 @@
   flex: 1;
   max-width: 600px;
   z-index: 2;
-  margin-top: -1rem; /* slight upward lift */
+  margin-top: -1rem; /* slightly upward */
 }
 
 .hero-heading {
@@ -29,9 +48,26 @@
 .hero-subtext {
   font-size: 1.2rem;
   color: #444;
+  margin-bottom: 1.5rem;
+}
+
+/* Highlights / Features */
+.hero-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
   margin-bottom: 2rem;
 }
 
+.highlight {
+  font-size: 1rem;
+  color: #222;
+  background: #eaf1ff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+}
+
+/* Button */
 .hero-button {
   padding: 1.2rem 2.8rem;
   background: linear-gradient(90deg, #0a47ff, #4f8dff);
@@ -49,7 +85,7 @@
   box-shadow: 0 10px 25px rgba(10, 71, 255, 0.3);
 }
 
-/* RIGHT SLIDESHOW */
+/* Right Slideshow */
 .hero-image-slider {
   flex: 1.1;
   display: flex;
@@ -64,16 +100,69 @@
   height: 450px;
   object-fit: cover;
   border-radius: 25px;
-  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.25);
-  transition: transform 0.8s ease, box-shadow 0.8s ease;
-  position: absolute;
+  position: relative;
   top: 0;
-  left: 0;
+  left: 10%;
+  transition: transform 0.8s ease, box-shadow 0.8s ease;
 }
 
 .hero-image:hover {
   transform: scale(1.05);
-  box-shadow: 0px 25px 60px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 25px 60px rgba(0, 0, 0, 0.20);
+}
+
+/* Slideshow controls */
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  border: none;
+  color: #0a47ff;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  font-size: 20px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 24px rgba(10,71,255,0.25);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  z-index: 3;
+}
+
+.hero-arrow.left { left: 8px; }
+.hero-arrow.right { right: -90px; }
+
+.hero-arrow:hover {
+  transform: translateY(-50%) scale(1.06);
+  box-shadow: 0 12px 30px rgba(10,71,255,0.35);
+  background: #ffffff;
+}
+
+.hero-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.hero-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(10,71,255,0.25);
+  border: 1px solid rgba(10,71,255,0.45);
+  cursor: pointer;
+  padding: 0;
+}
+
+.hero-dots .dot.active {
+  background: #0a47ff;
+  box-shadow: 0 0 0 3px rgba(10,71,255,0.15);
 }
 
 /* RESPONSIVE DESIGN */
@@ -82,29 +171,26 @@
     flex-direction: column;
     padding: 3rem 2rem;
     text-align: center;
-    gap: 2rem; /* vertical gap between text and image */
+    gap: 2rem;
   }
 
   .hero-content {
     margin-top: 0;
   }
 
-  /* Image container adjustments for smaller screens */
   .hero-image-slider {
     flex: none;
-    justify-content: center; /* center image under text */
-    margin-left: 0; /* remove left margin for centered layout */
+    justify-content: center;
     width: 100%;
   }
 
   .hero-image {
-    width: 90%; /* fit smaller screens */
+    width: 90%;
     height: auto;
     max-height: 400px;
     position: relative;
     top: 0;
-    left: 0;
+    left: 200%;
     transform: scale(1);
-    animation: zoomEffect 5s ease-in-out forwards;
   }
 }
