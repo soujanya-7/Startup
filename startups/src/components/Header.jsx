@@ -6,13 +6,10 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   return (
     <header className="header">
-      {/* LEFT SECTION — Logo + Brand Name */}
       <div className="header-left">
         <img src={logo} alt="Propel Foundry Logo" className="header-logo-img" />
         
       </div>
-
-      {/* RIGHT SECTION — Navigation + Button */}
       <div className="header-right">
         <button className="header-menu-btn" aria-label="Open menu" onClick={() => setOpen((v) => !v)}>
           ≡

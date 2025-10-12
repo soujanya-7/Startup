@@ -5,19 +5,19 @@ import "../styles/Contact.css";
 const Contact = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [query, setQuery] = useState("Select your query type"); // dropdown selection
+  const [query, setQuery] = useState("Select your query type"); 
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("");
-  const [statusType, setStatusType] = useState(""); // "success" | "error"
+  const [statusType, setStatusType] = useState(""); 
   const [loading, setLoading] = useState(false);
   const [toastVisible, setToastVisible] = useState(false);
-  const [showInlineStatus, setShowInlineStatus] = useState(false); // render banner only after actual send
+  const [showInlineStatus, setShowInlineStatus] = useState(false); 
   const [emailTouched, setEmailTouched] = useState(false);
   const [emailError, setEmailError] = useState("");
 
   const validateEmail = (val) => {
-    const re = /^[^@\s]+@[^@\s]+\.(com|in)$/i; // must end with .com or .in
+    const re = /^[^@\s]+@[^@\s]+\.(com|in)$/i; 
     return re.test(val);
   };
 
@@ -26,16 +26,14 @@ const Contact = () => {
     setStatus("");
     setShowInlineStatus(false);
     setLoading(true);
-    // Validate dropdown selection (placeholder should not be submitted)
     if (query === "Select your query type") {
       setLoading(false);
       setStatus("Please select your query type.");
       setStatusType("error");
       setToastVisible(true);
       setTimeout(() => setToastVisible(false), 5000);
-      return; // do not show inline banner for validation-only errors
+      return; 
     }
-    // Email validation before sending
     const emailValid = validateEmail(email);
     if (!emailValid) {
       setLoading(false);
@@ -52,7 +50,6 @@ const Contact = () => {
       const templateId = "template_lqiq4hp";
       const publicKey = "PVvjgTLofvDoeyXeC";
 
-      // Get current time for the template
       const currentTime = new Date().toLocaleString('en-US', {
         weekday: 'long',
         year: 'numeric',
@@ -66,16 +63,15 @@ const Contact = () => {
         serviceId,
         templateId,
         {
-          name: name,           // matches {{name}} in template
-          time: currentTime,    // matches {{time}} in template  
-          message: message,     // matches {{message}} in template
-          // Additional fields that might be useful
+          name: name,           
+          time: currentTime,    
+          message: message,     
           phone: phone,
           email: email,
           query: query,
-          subject: query,       // use query as subject
-          to_email: "support@propelfoundary.com", // ensure recipient is Support
-          reply_to: email,                         // set reply-to to sender
+          subject: query,       
+          to_email: "support@propelfoundary.com", 
+          reply_to: email,                         
         },
         { publicKey }
       );

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "../styles/Training.css";
-import growthImage from "../assets/growth.jpg"; // Replace with your image
+import growthImage from "../assets/growth.jpg"; 
 
 const Training = () => {
   return (

@@ -19,7 +19,6 @@
   align-items: center;
 }
 
-/* Vertical central line */
 .registration-vertical-line {
   position: absolute;
   top: 0;
@@ -32,7 +31,6 @@
   z-index: 0;
 }
 
-/* Step cards */
 .registration-step-card {
   background: #f5faff;
   padding: 2rem 1.5rem;
@@ -44,7 +42,6 @@
   z-index: 1;
 }
 
-/* Left/right positioning */
 .registration-step-card.left {
   align-self: flex-start;
   text-align: right;
@@ -54,22 +51,20 @@
   text-align: left;
 }
 
-/* Connector lines from vertical line to step cards */
 .registration-connector {
   position: absolute;
   width: 40px;
   height: 4px;
   background: #0a6eff;
-  top: 35px; /* vertically aligned with step number */
+  top: 35px;
 }
 .registration-connector.left {
-  right: -40px; /* from line to card */
+  right: -40px;
 }
 .registration-connector.right {
   left: -40px;
 }
 
-/* Step number circle */
 .registration-step-number {
   background-color: #0a6eff;
   color: #fff;
@@ -100,7 +95,6 @@
   color: #555;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .registration-step-card {
     width: 90%;
@@ -118,6 +112,6 @@
   }
 
   .registration-connector {
-    display: none; /* connectors hidden on mobile */
+    display: none;
   }
 }

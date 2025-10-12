@@ -5,24 +5,24 @@
 
 .training-heading {
   text-align: center;
-  font-size: 3.5rem; /* increased from 3rem */
+  font-size: 3.5rem;
   color: #0a47ff;
   font-weight: 800;
-  margin-bottom: 4.5rem; /* slightly more spacing */
+  margin-bottom: 4.5rem;
 }
 
 .training-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5rem; /* increased gap between image and content */
-  max-width: 1300px; /* slightly wider container */
+  gap: 5rem;
+  max-width: 1300px;
   margin: 0 auto;
   flex-wrap: wrap;
 }
 
 .training-image-wrapper {
-  flex: 1 1 500px; /* slightly bigger image column */
+  flex: 1 1 500px;
   max-width: 550px;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .training-content {
-  flex: 1 1 500px; /* bigger content column */
+  flex: 1 1 500px;
   max-width: 650px;
   display: flex;
   flex-direction: column;
@@ -47,7 +47,7 @@
 }
 
 .training-subheading {
-  font-size: 1.4rem; /* increased from 1.2rem */
+  font-size: 1.4rem;
   color: #4a5568;
   line-height: 1.9;
   margin-bottom: 2.5rem;
@@ -60,7 +60,7 @@
 }
 
 .training-points li {
-  font-size: 1.2rem; /* increased from 1rem */
+  font-size: 1.2rem;
   color: #4a5568;
   padding-left: 1.5rem;
   position: relative;
@@ -72,12 +72,11 @@
   position: absolute;
   left: 0;
   color: #0a47ff;
-  font-size: 1.5rem; /* bigger bullet */
+  font-size: 1.5rem;
 }
 
 .training-button {
-  padding: 1.2rem 2.8rem; /* bigger button */
-  font-size: 1.15rem; /* increased from 1.05rem */
+  padding: 1.2rem 2.8rem;
   background: #fff;
   color: #0a47ff;
   border: 2px solid #0a47ff;
@@ -87,10 +86,9 @@
   transition: all 0.3s ease;
 }
 
-/* Responsive */
 @media (max-width: 1015px) {
   .training-wrapper {
-    flex-direction: column; /* image first, then content */
+    flex-direction: column;
     align-items: center;
     gap: 3.5rem;
   }
@@ -108,15 +106,15 @@
 
 @media (max-width: 640px) {
   .training-heading {
-    font-size: 2.5rem; /* mobile heading */
+    font-size: 2.5rem;
   }
 
   .training-subheading {
-    font-size: 1.4rem; /* mobile subheading */
+    font-size: 1.4rem;
   }
 
   .training-points li {
-    font-size: 1.1rem; /* mobile points */
+    font-size: 1.1rem;
   }
 
   .training-button {

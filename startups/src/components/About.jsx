@@ -5,7 +5,6 @@ import "../styles/About.css";
 const About = () => {
   return (
     <>
-      {/* Hero banner */}
       <section className="about-hero" id="about">
         <div className="about-hero-inner">
           <motion.h1
@@ -28,8 +27,6 @@ const About = () => {
           </motion.p>
         </div>
       </section>
-
-      {/* Core pillars */}
       <section className="about-section">
         <div className="about-container">
           <div className="about-grid">
@@ -65,8 +62,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
-      {/* Stats */}
       <section className="about-stats">
         <div className="about-stats-container">
           {[
@@ -88,8 +83,6 @@ const About = () => {
           ))}
         </div>
       </section>
-
-      {/* Timeline */}
       <section className="about-timeline">
         <div className="timeline-inner">
           {[
@@ -114,8 +107,6 @@ const About = () => {
           ))}
         </div>
       </section>
-
-      {/* CTA */}
       <section className="about-cta">
         <motion.div
           className="about-cta-card"

@@ -25,7 +25,6 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Keyboard navigation
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "ArrowRight") {
@@ -44,7 +43,6 @@ const Hero = () => {
   return (
     <section className="hero-section" ref={ref}>
 
-      {/* Left Text Content */}
       <motion.div
         className="hero-content"
         initial={{ opacity: 0, y: 40 }}
@@ -66,7 +64,6 @@ const Hero = () => {
         </motion.button>
       </motion.div>
 
-      {/* Right Image Slideshow */}
       <div className="hero-image-slider">
         <AnimatePresence mode="wait">
           {inView && (
@@ -83,7 +80,6 @@ const Hero = () => {
           )}
         </AnimatePresence>
 
-        {/* Controls */}
         <button className="hero-arrow left" aria-label="Previous" onClick={prev}>
           &#8592;
         </button>

@@ -16,7 +16,6 @@ const Registration = () => {
     <section className="registration-section" id="registration">
       <h2 className="registration-heading">How We Works</h2>
       <div className="registration-stepper">
-        {/* Vertical central line */}
         <div className="registration-vertical-line"></div>
 
         {stepsData.map((step, index) => (
@@ -28,7 +27,6 @@ const Registration = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
           >
-            {/* Connector line from central vertical line */}
             <div className={`registration-connector ${index % 2 === 0 ? "left" : "right"}`}></div>
 
             <div className="registration-step-number">{step.number}</div>

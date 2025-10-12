@@ -1,10 +1,9 @@
-/* HERO SECTION */
 .hero-section {
   display: flex;
   justify-content: space-between;
-  align-items: flex; /* slightly top */
-  padding: 5.5rem 6rem 2rem 6rem; /* moderate top padding */
-  background: #ffffff; /* white background to match theme */
+  align-items: flex;
+  padding: 5.5rem 6rem 2rem 6rem;
+  background: #ffffff;
   min-height: 70vh;
   overflow: hidden;
   position: relative;
@@ -13,7 +12,6 @@
   color: #1a1a1a;
 }
 
-/* Bubbles */
 .hero-bubble {
   position: absolute;
   bottom: -20px;
@@ -29,12 +27,11 @@
   100% { transform: translateY(-120vh) translateX(50px) rotate(360deg); opacity: 0; }
 }
 
-/* LEFT CONTENT */
 .hero-content {
   flex: 1;
   max-width: 600px;
   z-index: 2;
-  margin-top: -1rem; /* slightly upward */
+  margin-top: -1rem;
 }
 
 .hero-heading {
@@ -47,11 +44,10 @@
 
 .hero-subtext {
   font-size: 1.2rem;
-  color: #475569; /* slate-600 for better contrast on white */
+  color: #475569;
   margin-bottom: 1.5rem;
 }
 
-/* Highlights / Features */
 .hero-highlights {
   display: flex;
   flex-direction: column;
@@ -67,7 +63,6 @@
   border-radius: 8px;
 }
 
-/* Button */
 .hero-button {
   padding: 1.2rem 2.8rem;
   background: linear-gradient(90deg, #0a47ff, #4f8dff);
@@ -85,15 +80,14 @@
   box-shadow: 0 10px 25px rgba(10, 71, 255, 0.3);
 }
 
-/* Right Slideshow */
 .hero-image-slider {
   flex: 1.1;
   display: flex;
-  flex-direction: column;       /* stack image then indicators */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-right: 0;             /* avoid pushing content */
-  height: auto;                 /* fit content height */
+  padding-right: 0;
+  height: auto;
   position: relative;
 }
 
@@ -104,7 +98,7 @@
   max-height: 500px;
   object-fit: cover;
   border-radius: 25px;
-  position: static;             /* no offset */
+  position: static;
   transition: transform 0.8s ease, box-shadow 0.8s ease;
 }
 
@@ -113,7 +107,6 @@
   box-shadow: 0px 25px 60px rgba(0, 0, 0, 0.20);
 }
 
-/* Slideshow controls */
 .hero-arrow {
   position: absolute;
   top: 50%;
@@ -143,29 +136,29 @@
 }
 
 .hero-dots {
-  position: static;                 /* appear below the image */
-  margin-top: 14px;                 /* space under image */
+  position: static;
+  margin-top: 14px;
   display: flex;
-  justify-content: center;          /* center horizontally */
+  justify-content: center;
   gap: 10px;
   z-index: 3;
 }
 
 .hero-dots .dot {
-  width: 24px;                      /* line style */
+  width: 24px;
   height: 4px;
   border-radius: 999px;
-  background: #ffffff;              /* white background bar */
+  background: #ffffff;
   border: 1px solid rgba(10,71,255,0.35);
   cursor: pointer;
   padding: 0;
-  position: relative;               /* host progress */
+  position: relative;
   overflow: hidden;
 }
 
 .hero-dots .dot.active {
-  background: #ffffff;              /* keep bar white */
-  border-color: #0a47ff;            /* emphasize active */
+  background: #ffffff;
+  border-color: #0a47ff;
   box-shadow: 0 0 0 3px rgba(10,71,255,0.10);
 }
 
@@ -175,15 +168,15 @@
   left: 0;
   top: 0;
   bottom: 0;
-  background: #0a47ff;              /* blue loading fill */
-  width: 100%;                      /* full width, animate scale */
+  background: #0a47ff;
+  width: 100%;
   transform: scaleX(0);
   transform-origin: left;
-  will-change: transform;           /* GPU-friendly */
+  will-change: transform;
 }
 
 .hero-dots .dot.active .progress {
-  animation: hero-progress-transform 5s linear forwards; /* match slide interval */
+  animation: hero-progress-transform 5s linear forwards;
 }
 
 @keyframes hero-progress-transform {
@@ -191,7 +184,6 @@
   to { transform: scaleX(1); }
 }
 
-/* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
   .hero-section {
     flex-direction: column;
@@ -208,9 +200,9 @@
     flex: none;
     justify-content: center;
     width: 100%;
-    height: auto; /* allow to shrink */
-    padding-right: 0; /* remove side padding */
-    position: relative; /* keep arrows anchored */
+    height: auto;
+    padding-right: 0;
+    position: relative;
   }
 
   .hero-image {
@@ -218,12 +210,11 @@
     max-width: 700px;
     height: auto;
     max-height: 420px;
-    position: static;      /* don't offset off-screen */
-    margin: 0 auto;        /* center */
+    position: static;
+    margin: 0 auto;
     transform: none;
   }
 
-  /* Reposition arrows inside viewport on small screens */
   .hero-arrow.left { left: 8px; }
   .hero-arrow.right { right: 8px; }
 }
