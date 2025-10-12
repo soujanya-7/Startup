@@ -1,3 +1,64 @@
+.field {
+  width: 100%;
+  max-width: 600px;
+  min-width: 260px;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  align-items: center;
+  gap: 8px;
+}
+
+.field-icon {
+  display: grid;
+  place-items: center;
+  color: #0a47ff;
+}
+
+.field-icon-top { align-self: start; padding-top: 10px; }
+
+/* two-column on larger screens */
+@media (min-width: 860px) {
+  .contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 18px;
+    justify-items: center;
+    align-items: start;
+  }
+  .field { max-width: 100%; width: 100%; }
+  .field.span-2 { grid-column: 1 / -1; }
+}
+
+/* toast notification */
+.toast {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 24px;
+  background: #ef4444;            /* red */
+  color: #ffffff;                  /* white text */
+  padding: 12px 18px;
+  border-radius: 12px;
+  box-shadow: 0 12px 26px rgba(0,0,0,0.18);
+  z-index: 9999;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.toast-success { background: #16a34a; }
+.toast-error { background: #ef4444; }
+
+/* invalid email styles */
+.contact-input.invalid {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}
+.field-error {
+  grid-column: 2;
+  font-size: 0.9rem;
+  color: #ef4444;
+  margin-top: 6px;
+}
 /* Contact section styling */
 .contact-section {
   padding: 80px 20px;
@@ -63,7 +124,7 @@
 
 .contact-form {
   display: flex;
-  flex-direction: column;            /* stack fields vertically */
+  flex-direction: column;            /* default mobile */
   gap: 14px;                         /* space between fields */
   justify-content: flex-start;
   align-items: center;               /* center fields */
@@ -165,14 +226,14 @@
 }
 
 .contact-button {
-  padding: 12px 18px;
+  padding: 12px;
+  width: 300%;
   border-radius: 8px;
   background: linear-gradient(90deg, #0a47ff, #4f8dff);
   border: none;
   color: white;
   font-weight: 600;
-  cursor: pointer;
-  width: auto;                       /* keep button compact */
+  cursor: pointer;                       /* keep button compact */
   transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
   box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
 }

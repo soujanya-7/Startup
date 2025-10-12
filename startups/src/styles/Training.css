@@ -88,9 +88,9 @@
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
+@media (max-width: 1015px) {
   .training-wrapper {
-    flex-direction: column-reverse;
+    flex-direction: column; /* image first, then content */
     align-items: center;
     gap: 3.5rem;
   }
@@ -102,7 +102,7 @@
 
   .training-image {
     aspect-ratio: auto;
-    width: 90%;
+    width: 100%;
   }
 }
 

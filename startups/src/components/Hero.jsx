@@ -98,8 +98,11 @@ const Hero = () => {
               className={`dot ${idx === current ? "active" : ""}`}
               aria-label={`Go to slide ${idx + 1}`}
               aria-selected={idx === current}
+              type="button"
               onClick={() => setCurrent(idx)}
-            />
+            >
+              <span className="progress" aria-hidden="true" />
+            </button>
           ))}
         </div>
       </div>

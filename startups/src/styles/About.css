@@ -15,12 +15,12 @@
   font-size: 3rem;
   font-weight: 800;
   letter-spacing: 0.3px;
-  color: #0a47ff; /* brand blue title */
+  color: #0a47ff; 
 }
 
 .about-hero-subtitle {
   margin-top: 0.8rem;
-  color: #475569; /* slate-600 */
+  color: #475569; 
   font-size: 1.1rem;
 }
 

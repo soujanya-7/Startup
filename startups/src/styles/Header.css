@@ -46,6 +46,19 @@
   line-height: 1;
   cursor: pointer;
   color: #0a6eff;
+  /* box style */
+  background: #ffffff;
+  border: 1px solid rgba(148,163,184,0.25);
+  border-radius: 10px;
+  padding: 6px 10px;
+  box-shadow: 0 6px 16px rgba(2,6,23,0.10);
+  transition: box-shadow .18s ease, transform .18s ease, border-color .18s ease;
+}
+
+.header-menu-btn:hover {
+  box-shadow: 0 10px 22px rgba(2,6,23,0.14);
+  transform: translateY(-1px);
+  border-color: rgba(148,163,184,0.35);
 }
 
 .nav-links a {

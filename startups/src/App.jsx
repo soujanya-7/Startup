@@ -18,6 +18,13 @@ function App() {
     return () => window.removeEventListener("hashchange", onHashChange);
   }, []);
 
+  // Scroll to top whenever route changes
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
+  }, [route]);
+
   // Direct imports used; no lazy-loading
 
   return (

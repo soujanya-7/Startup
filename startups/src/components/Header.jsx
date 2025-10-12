@@ -15,7 +15,7 @@ const Header = () => {
       {/* RIGHT SECTION — Navigation + Button */}
       <div className="header-right">
         <button className="header-menu-btn" aria-label="Open menu" onClick={() => setOpen((v) => !v)}>
-          ⋮
+          ≡
         </button>
         <nav className={`nav-links ${open ? "open" : ""}`} onClick={() => setOpen(false)}>
           <a href="#/">Home</a>

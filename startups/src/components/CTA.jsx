@@ -6,7 +6,7 @@ const CTA = () => {
     <section className="cta-section">
       <h2 className="cta-heading">Ready to Propel Your Startup?</h2>
       <p className="cta-subtext">
-        Get expert guidance on registration, compliance, and growth. Let’s get started today!
+          Let’s get started today!
       </p>
       <button className="cta-button">Book a Consultation</button>
     </section>
