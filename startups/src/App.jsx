@@ -5,7 +5,10 @@ import Training from "./components/Training";
 import CTA from "./components/CTA";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
-
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Services from "./components/Services";
+import Community from "./components/Community";
 function App() {
   const [route, setRoute] = React.useState(window.location.hash || "#/");
 
@@ -15,32 +18,27 @@ function App() {
     return () => window.removeEventListener("hashchange", onHashChange);
   }, []);
 
-  const About = React.lazy(() => import("./pages/About"));
-  const ContactPage = React.lazy(() => import("./pages/Contact"));
-  const ServicesPage = React.lazy(() => import("./pages/Services"));
-  const CommunityPage = React.lazy(() => import("./pages/Community"));
+  // Direct imports used; no lazy-loading
 
   return (
     <div>
       <Header />
-      <React.Suspense fallback={null}>
-        {route === "#/about" ? (
-          <About />
-        ) : route === "#/contact" ? (
-          <ContactPage />
-        ) : route === "#/services" ? (
-          <ServicesPage />
-        ) : route === "#/community" ? (
-          <CommunityPage />
-        ) : (
-          <>
-            <Hero />
-            <Training />
-            <CTA />
-            <FAQ />
-          </>
-        )}
-      </React.Suspense>
+      {route === "#/about" ? (
+        <About />
+      ) : route === "#/contact" ? (
+        <Contact />
+      ) : route === "#/services" ? (
+        <Services />
+      ) : route === "#/community" ? (
+        <Community />
+      ) : (
+        <>
+          <Hero />
+          <Training />
+          <CTA />
+          <FAQ />
+        </>
+      )}
       <Footer />
     </div>
   );

@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer">
      
       <div className="footer-column">
-        <h4>Propel Foundry</h4>
+        <h4>PropelFoundry</h4>
         <div className="footer-social">
           <a href="#"><FaFacebookF /></a>
           <a href="#"><FaInstagram /></a>

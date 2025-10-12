@@ -11,6 +11,8 @@
   box-sizing: border-box;
   font-size: 1.1rem;
   height: 120px;
+  box-shadow: 0 6px 14px rgba(2, 6, 23, 0.06); /* subtle bottom shadow */
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18); /* faint separator */
 }
 
 .header-left {
@@ -34,6 +36,16 @@
 .nav-links {
   display: flex;
   gap: 2rem;
+}
+
+.header-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  color: #0a6eff;
 }
 
 .nav-links a {
@@ -63,6 +75,7 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 1rem 2rem;
+    position: relative; /* anchor absolute menu button */
   }
 
   .header-right {
@@ -70,10 +83,34 @@
     flex-wrap: wrap;
     gap: 1rem;
   }
+
+  .header-menu-btn { 
+    display: block; 
+    position: absolute; 
+    right: 16px; 
+    top: 16px; 
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0.25rem;
+    position: absolute;          /* dropdown under dots */
+    right: 12px;
+    top: 56px;                   /* below the 3-dots button */
+    background: #ffffff;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 10px;
+    box-shadow: 0 12px 28px rgba(2, 6, 23, 0.12);
+    padding: 0.5rem;
+    z-index: 1100;
+    min-width: 160px;
+  }
+  .nav-links a { padding: 8px 10px; display: block; }
+  .nav-links.open { display: flex; }
 }
 /* ---- Logo Styles ---- */
 .header-logo-img {
-  width: 370px;
+  width: 360px;
   margin-right: 12px;
   padding-left: 0%;
   cursor: pointer;

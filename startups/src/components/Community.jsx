@@ -13,7 +13,7 @@ const communityData = [
     image: startupImg,
   },
   {
-    title: "Mentor Network",
+    title: "Mentor Community",
     description: "Connect with experienced mentors who provide guidance, insights, and support to help you grow your startup.",
     image: mentorImg,
   },
@@ -23,7 +23,7 @@ const communityData = [
     image: studentImg,
   },
   {
-    title: "Research Faculty",
+    title: "Research Faculty Community",
     description: "Collaborate with research faculty to explore innovative solutions, join projects, and bridge academia with industry.",
     image: facultyImg,
   },

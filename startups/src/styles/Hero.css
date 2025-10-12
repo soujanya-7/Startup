@@ -97,8 +97,8 @@
 }
 
 .hero-image {
-  width: 700px;
-  height: 450px;
+  width: 800px;
+  height: 500px;
   object-fit: cover;
   border-radius: 25px;
   position: relative;
@@ -183,15 +183,17 @@
     flex: none;
     justify-content: center;
     width: 100%;
+    height: auto; /* allow to shrink */
+    padding-right: 0; /* remove side padding */
   }
 
   .hero-image {
-    width: 90%;
+    width: 100%;
+    max-width: 700px;
     height: auto;
-    max-height: 400px;
-    position: relative;
-    top: 0;
-    left: 200%;
-    transform: scale(1);
+    max-height: 420px;
+    position: static;      /* don't offset off-screen */
+    margin: 0 auto;        /* center */
+    transform: none;
   }
 }

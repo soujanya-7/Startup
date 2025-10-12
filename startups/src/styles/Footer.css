@@ -3,16 +3,19 @@
   color: #0a3dff;
   display: flex;
   flex-wrap: wrap;
+  padding: 0.5rem 0.75rem;            /* even tighter padding */
+  gap: 0.5rem 0.75rem;                /* smaller gaps */
 }
 
 .footer-column {
-  flex: 1 1 200px;
+  flex: 1 1 160px;                    /* allow tighter wrapping */
 }
 
 .footer-column h4 {
-  font-size: 1.2rem;
+  font-size: 1.2rem;                 /* slightly bigger heading */
   color: #0a6eff;
-  font-weight: 600;
+  font-weight: 700;                   /* more bold */
+  margin: 0 0 0.4rem 0;               /* smaller bottom margin */
 }
 
 .footer-column ul {
@@ -22,8 +25,8 @@
 }
 
 .footer-column ul li {
-  margin-bottom: 0.5rem;
-  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;                  /* slightly smaller text */
 }
 
 .footer-column ul li a {
@@ -54,8 +57,8 @@
 
 .footer-bottom {
   text-align: center;
-  margin-top: 3rem;
-  font-size: 0.85rem;
+  margin-top: 0.5rem;                 /* even less spacing */
+  font-size: 0.8rem;                  /* smaller bottom text */
   color: #555;
   width: 100%;
 }

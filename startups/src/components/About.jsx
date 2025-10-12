@@ -71,8 +71,8 @@ const About = () => {
         <div className="about-stats-container">
           {[
             { label: "Startups Supported", value: "120+" },
-            { label: "Mentor Network", value: "60+" },
-            { label: "Workshops Conducted", value: "85+" },
+            { label: "Mentor Network", value: "200+" },
+            { label: "Workshops Conducted", value: "80+" },
           ].map((s, idx) => (
             <motion.div
               key={idx}
@@ -93,9 +93,9 @@ const About = () => {
       <section className="about-timeline">
         <div className="timeline-inner">
           {[
-            { year: "2022", text: "Founded to bridge gaps between academia and industry for founders." },
-            { year: "2023", text: "Launched mentor network and flagship training programs." },
-            { year: "2024", text: "Scaled to multi-city workshops and startup showcases." },
+            { text: "Founded to bridge gaps between academia and industry for founders." },
+            { text: "Launched mentor network and flagship training programs." },
+            { text: "Scaled to multi-city workshops and startup showcases." },
           ].map((t, idx) => (
             <motion.div
               key={idx}
@@ -124,7 +124,7 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h3>Ready to partner with us?</h3>
+          <h1>Ready to partner with us?</h1>
           <p>Join our community, find mentors, and accelerate your journey today.</p>
           <a href="#/contact" className="about-cta-button">Contact Us</a>
         </motion.div>
