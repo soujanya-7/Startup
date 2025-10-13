@@ -1,0 +1,142 @@
+.training-section {
+  padding: 6rem 2rem;
+  background: #f7f9fc;
+}
+
+.training-heading {
+  text-align: center;
+  font-size: 3.5rem;
+  color: #0a47ff;
+  font-weight: 800;
+  margin-bottom: 4.5rem;
+}
+
+.training-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.training-image-wrapper {
+  flex: 1 1 500px;
+  max-width: 550px;
+}
+
+.training-image {
+  width: 90%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.5s ease;
+}
+
+.training-image-wrapper:hover .training-image {
+  transform: scale(1.05);
+}
+
+.training-content {
+  flex: 1 1 500px;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.training-subheading {
+  font-size: 1.4rem;
+  color: #4a5568;
+  line-height: 1.9;
+  margin-bottom: 2.5rem;
+  max-width: 550px;
+}
+
+/* keep points aligned left */
+.training-points {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2.5rem;
+  width: 100%;
+  max-width: 500px;
+  text-align: left; /* ensure left alignment */
+}
+
+.training-points li {
+  font-size: 1.2rem;
+  color: #4a5568;
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 1.2rem;
+}
+
+.training-points li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #0a47ff;
+  font-size: 1.5rem;
+}
+
+/* Shorter and centered button */
+.training-button {
+  padding: 0.8rem 1.8rem;
+  background: #fff;
+  color: #0a47ff;
+  border: 2px solid #0a47ff;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 1000;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  display: block;
+  margin: 0 auto;
+}
+
+.training-button:hover {
+  background: #0a47ff;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 1015px) {
+  .training-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5rem;
+  }
+
+  .training-image-wrapper,
+  .training-content {
+    max-width: 100%;
+  }
+
+  .training-image {
+    aspect-ratio: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .training-heading {
+    font-size: 2.5rem;
+  }
+
+  .training-subheading {
+    font-size: 1.4rem;
+  }
+
+  .training-points li {
+    font-size: 1.1rem;
+  }
+
+  .training-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
