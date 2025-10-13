@@ -154,10 +154,14 @@ const Contact = () => {
                 required
               >
                 <option value="Select your query type" disabled>Select your query type</option>
+                <option value="Company Registration">Company Registration</option>
+                <option value="IPR and Compliance">IPR and Compliance</option>
+                <option value="Training Programs">Training Programs</option>
+                <option value="Research and Development">Research and Development</option>
                 <option value="Hackathon">Hackathon</option>
                 <option value="Startups">Startups</option>
-                <option value="General Inquiry">General Inquiry</option>
                 <option value="Mentorship">Mentorship</option>
+                <option value="General Inquiry">General Inquiry</option>
               </select>
             </div>
 
@@ -203,7 +207,7 @@ const Contact = () => {
         <div className="office-card">
           <h3>Our Office</h3>
           <p><strong>Propel Foundry HQ</strong></p>
-          <p>Saravannam Patti,<br />Coimatore, India</p>
+          <p>Saravanampatti,<br />Coimbatore, India</p>
           <p><strong>Email:</strong> support@propelfoundary.com</p>
           <p><strong>Phone:</strong> +91 98765 43210</p>
 

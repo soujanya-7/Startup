@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useNavigate } from "react-router-dom"; // import inside the file
 import "../styles/Hero.css";
 import dpiitImg from "../assets/dpiit registration.png";
 import gstImg from "../assets/gst registration.png";
@@ -14,9 +13,8 @@ const images = [dpiitImg, gstImg, mentoringImg, networkingImg, fundingImg];
 const Hero = () => {
   const [current, setCurrent] = useState(0);
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
-  const navigate = useNavigate(); // ✅ must be inside the component
 
-  // Auto-slide images every 5 seconds
+  // Auto-slide every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
@@ -37,6 +35,11 @@ const Hero = () => {
   const next = () => setCurrent((prev) => (prev + 1) % images.length);
   const prev = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
 
+  // ✅ Navigate to Services page (hash route)
+  const goToServices = () => {
+    window.location.hash = "#/services";
+  };
+
   return (
     <section className="hero-section" ref={ref}>
       <motion.div
@@ -53,7 +56,7 @@ const Hero = () => {
         <motion.button
           whileHover={{ scale: 1.05 }}
           className="hero-button"
-          onClick={() => navigate("#/services")} // ✅ navigation
+          onClick={goToServices} // ✅ Works with your hash router
         >
           Explore Our Services
         </motion.button>
@@ -75,10 +78,10 @@ const Hero = () => {
           )}
         </AnimatePresence>
 
-        <button className="hero-arrow left" aria-label="Previous" onClick={prev}>
+        <button className="hero-arrow left" onClick={prev} aria-label="Previous">
           &#8592;
         </button>
-        <button className="hero-arrow right" aria-label="Next" onClick={next}>
+        <button className="hero-arrow right" onClick={next} aria-label="Next">
           &#8594;
         </button>
 

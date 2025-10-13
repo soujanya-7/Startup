@@ -4,24 +4,35 @@ import { motion } from "framer-motion";
 
 const faqData = [
   {
-    question: "How do I find a mentor?",
+    question: "How can I connect with the right mentor for my startup?",
     answer:
-      "You can explore our mentor directory based on industry, experience, or specific skill sets. Each mentor profile highlights their expertise, past projects, and availability. Once you find a suitable mentor, simply send a connection request. After approval, you can start chatting, scheduling sessions, and collaborating directly from your dashboard."
+      "Browse our mentor directory and filter by expertise, industry, or experience. Review profiles to see their background and past projects. Once you find a suitable mentor, send a connection request and start collaborating after approval."
   },
   {
-    question: "How do I book a session?",
+    question: "What’s the process for scheduling a mentoring session?",
     answer:
-      "After your mentor connection is accepted, head to the mentor’s profile or your dashboard. You can view available time slots and choose a convenient one. Once confirmed, you’ll receive an email and in-app notification with all session details. The meeting link and session notes will automatically appear in your account for easy access."
+      "After connecting with a mentor, go to their profile or your dashboard to view available slots. Choose a convenient time, confirm the session, and receive notifications with the meeting link and session details."
+  },
+  
+  {
+    question: "Who is eligible to join as a startup or mentor?",
+    answer:
+      "Startups at any stage—from idea validation to scaling—can register. Mentors are experienced professionals, founders, or domain experts. Both go through a short verification process to ensure meaningful and authentic collaboration."
   },
   {
-    question: "Are session materials available later?",
+    question: "Can I switch mentors if needed?",
     answer:
-      "Absolutely. Every session’s materials — including shared resources, mentor notes, attachments, and meeting recordings (if applicable) are securely stored in your dashboard. You can revisit them anytime to review discussions, track your startup’s progress, and apply the insights at your own pace."
+      "Absolutely. If you feel another mentor is a better fit for your startup goals, you can connect with a different mentor while maintaining access to past session records and guidance."
   },
   {
-    question: "Who can sign up as a mentor or startup?",
+    question: "Are there any costs involved for startups or mentors?",
     answer:
-      "Startups at any stage — from idea validation to scaling — are welcome to register. Mentors are typically experienced professionals, founders, or domain experts who can guide startups strategically. Both mentors and startups go through a short verification process to ensure authenticity and meaningful collaborations."
+      "Basic registration and access to mentor profiles are free. Some advanced services, workshops, or exclusive sessions may have associated fees, which will be clearly communicated upfront."
+  },
+  {
+    question: "How do I track my mentoring progress?",
+    answer:
+      "Your dashboard keeps a record of all sessions, notes, shared resources, and completed milestones. You can monitor your startup’s growth and upcoming sessions in one place."
   }
 ];
 
@@ -49,7 +60,7 @@ const FAQ = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        Answers for startups and mentors. Get clear guidance on connecting, booking, and using our platform’s features effectively.
+        Get answers to common questions about mentoring, booking sessions, and using our platform efficiently.
       </motion.p>
 
       {faqData.map((item, index) => (

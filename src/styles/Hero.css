@@ -1,13 +1,13 @@
 .hero-section {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Center left content vertically */
-  padding: 5.5rem 6rem 2rem 4rem;
+  align-items: center;
+  padding: 0% 5rem 4rem 4rem; /* 🔥 reduced top padding from 5.5rem → 2.5rem */
   background: #ffffff;
-  min-height: 70vh;
+  min-height: 65vh;
   overflow: hidden;
   position: relative;
-  gap: 2rem; /* Fixed gap */
+  gap: 2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #1a1a1a;
 }
@@ -31,24 +31,24 @@
   flex: 1;
   max-width: 600px;
   z-index: 2;
-  margin-top: 0; /* Remove top margin */
+  margin-top: -1rem; /* 🔥 pulls content slightly higher */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Vertical centering */
+  justify-content: center;
 }
 
 .hero-heading {
   font-size: 3.3rem;
   line-height: 1.2;
   color: #0a47ff;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   font-weight: 700;
 }
 
 .hero-subtext {
   font-size: 1.2rem;
   color: #475569;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 .hero-highlights {
@@ -101,7 +101,6 @@
   max-height: 500px;
   object-fit: cover;
   border-radius: 25px;
-  position: static;
   transition: transform 0.8s ease, box-shadow 0.8s ease;
 }
 
@@ -140,8 +139,7 @@
 }
 
 .hero-dots {
-  position: static;
-  margin-top: 14px;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -155,7 +153,6 @@
   background: #ffffff;
   border: 1px solid rgba(10,71,255,0.35);
   cursor: pointer;
-  padding: 0;
   position: relative;
   overflow: hidden;
 }
@@ -167,7 +164,6 @@
 }
 
 .hero-dots .dot .progress {
-  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -176,7 +172,6 @@
   width: 100%;
   transform: scaleX(0);
   transform-origin: left;
-  will-change: transform;
 }
 
 .hero-dots .dot.active .progress {
@@ -188,38 +183,32 @@
   to { transform: scaleX(1); }
 }
 
-/* Responsive */
+/* 📱 Responsive Design */
 @media (max-width: 1024px) {
   .hero-section {
     flex-direction: column;
-    padding: 3rem 2rem;
+    padding: 2rem 2rem 2rem 2rem; /* 🔥 reduced top padding */
     text-align: center;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .hero-content {
-    margin-top: 0;
+    margin-top: -0.5rem;
     justify-content: center;
     align-items: center;
   }
 
   .hero-image-slider {
-    flex: none;
-    justify-content: center;
     width: 100%;
     height: auto;
     padding-right: 0;
-    position: relative;
   }
 
   .hero-image {
     width: 100%;
     max-width: 700px;
-    height: auto;
     max-height: 420px;
-    position: static;
     margin: 0 auto;
-    transform: none;
   }
 
   .hero-arrow.left { left: 8px; }

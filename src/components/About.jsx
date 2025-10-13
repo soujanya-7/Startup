@@ -32,12 +32,12 @@ const About = () => {
           <div className="about-grid">
             {[
               {
-                title: "Our Mission",
+                title: "Our Vision",
                 text:
                   "To accelerate founders with the right knowledge, network, and tools to build impactful companies.",
               },
               {
-                title: "What We Do",
+                title: "Mission",
                 text:
                   "Registration, compliance, mentorship, training, and investor-ready preparation through curated programs.",
               },

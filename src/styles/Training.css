@@ -45,11 +45,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
+
 }
 
 .training-subheading {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: #4a5568;
   line-height: 1.9;
   margin-bottom: 2.5rem;
@@ -60,7 +60,7 @@
 .training-points {
   list-style: none;
   padding: 0;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   width: 100%;
   max-width: 500px;
   text-align: left; /* ensure left alignment */
@@ -69,9 +69,9 @@
 .training-points li {
   font-size: 1.2rem;
   color: #4a5568;
-  padding-left: 1.5rem;
+  padding-left: 1rem;
   position: relative;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .training-points li::before {
@@ -90,7 +90,7 @@
   border: 2px solid #0a47ff;
   border-radius: 12px;
   cursor: pointer;
-  font-weight: 1000;
+  font-weight: 400;
   transition: all 0.3s ease;
   font-size: 1rem;
   display: block;

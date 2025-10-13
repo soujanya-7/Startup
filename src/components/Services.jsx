@@ -50,7 +50,7 @@ const servicesData = [
   },
   {
     icon: <FaTrophy />,
-    title: "Hackathon Participation",
+    title: "Winning Hackathon",
     description: "We help startups showcase solutions and participate in hackathons for real-world impact.",
   },
 ];
