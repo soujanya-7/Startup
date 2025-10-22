@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "../styles/FAQ.css";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
+import "../styles/FAQ.css";
 
 const faqData = [
   {
@@ -13,7 +14,6 @@ const faqData = [
     answer:
       "After connecting with a mentor, go to their profile or your dashboard to view available slots. Choose a convenient time, confirm the session, and receive notifications with the meeting link and session details."
   },
-  
   {
     question: "Who is eligible to join as a startup or mentor?",
     answer:
@@ -39,12 +39,23 @@ const faqData = [
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const toggleAnswer = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  const toggleAnswer = (index) => setOpenIndex(openIndex === index ? null : index);
 
   return (
     <section className="faq-section" id="faq">
+      {/* SEO Meta Tags */}
+      <Helmet>
+        <title>FAQ & Support | Propel Foundry</title>
+        <meta
+          name="description"
+          content="Find answers to frequently asked questions about startup mentorship, session scheduling, eligibility, and platform usage at Propel Foundry."
+        />
+        <meta
+          name="keywords"
+          content="startup mentorship FAQ, Propel Foundry help, mentor sessions, booking guidance, platform support"
+        />
+      </Helmet>
+
       <motion.h2
         className="faq-heading"
         initial={{ opacity: 0, y: 30 }}
@@ -63,33 +74,41 @@ const FAQ = () => {
         Get answers to common questions about mentoring, booking sessions, and using our platform efficiently.
       </motion.p>
 
-      {faqData.map((item, index) => (
-        <motion.div
-          key={index}
-          className="faq-item"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-        >
-          <div className="faq-question" onClick={() => toggleAnswer(index)}>
-            {item.question}
-            <span>{openIndex === index ? "−" : "+"}</span>
-          </div>
-
+      <div role="list" className="faq-list">
+        {faqData.map((item, index) => (
           <motion.div
-            className={`faq-answer ${openIndex === index ? "open" : ""}`}
-            initial={{ height: 0, opacity: 0 }}
-            animate={{
-              height: openIndex === index ? "auto" : 0,
-              opacity: openIndex === index ? 1 : 0
-            }}
-            transition={{ duration: 0.4 }}
+            key={index}
+            className="faq-item"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <p>{item.answer}</p>
+            <button
+              className="faq-question"
+              onClick={() => toggleAnswer(index)}
+              aria-expanded={openIndex === index}
+              aria-controls={`faq-answer-${index}`}
+            >
+              {item.question}
+              <span aria-hidden="true">{openIndex === index ? "−" : "+"}</span>
+            </button>
+
+            <motion.div
+              id={`faq-answer-${index}`}
+              className={`faq-answer ${openIndex === index ? "open" : ""}`}
+              initial={{ height: 0, opacity: 0 }}
+              animate={{
+                height: openIndex === index ? "auto" : 0,
+                opacity: openIndex === index ? 1 : 0
+              }}
+              transition={{ duration: 0.4 }}
+            >
+              <p>{item.answer}</p>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      ))}
+        ))}
+      </div>
     </section>
   );
 };

@@ -1,11 +1,25 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 import "../styles/Training.css";
-import growthImage from "../assets/growth.jpg"; 
+import growthImage from "../assets/growth.jpg";
 
 const Training = () => {
   return (
     <section className="training-section" id="training">
+      {/* SEO Meta Tags */}
+      <Helmet>
+        <title>Training Sessions | Propel Foundry</title>
+        <meta
+          name="description"
+          content="Join Propel Foundry's professional training sessions for startups. Gain investment readiness, operational skills, and mentorship to scale effectively."
+        />
+        <meta
+          name="keywords"
+          content="Propel Foundry training, startup training programs, investment readiness, business growth training, startup mentorship"
+        />
+      </Helmet>
+
       <h2 className="training-heading">Professional Training Sessions</h2>
       <div className="training-wrapper">
         <motion.div
@@ -15,7 +29,7 @@ const Training = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <img src={growthImage} alt="Business Growth" className="training-image" />
+          <img src={growthImage} alt="Business Growth Training" className="training-image" />
         </motion.div>
 
         <motion.div

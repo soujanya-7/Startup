@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 import "../styles/Community.css";
 import startupImg from "../assets/image.png";
 import mentorImg from "../assets/mentorship.jpg";
@@ -32,6 +33,19 @@ const communityData = [
 const Community = () => {
   return (
     <section className="community-section" id="community">
+      {/* SEO Meta Tags */}
+      <Helmet>
+        <title>Community | Propel Foundry</title>
+        <meta
+          name="description"
+          content="Join Propel Foundry's vibrant community for startups, mentors, students, and faculty. Collaborate, learn, and grow with our network."
+        />
+        <meta
+          name="keywords"
+          content="Propel Foundry community, startup community, mentor network, student startup program, research faculty collaboration"
+        />
+      </Helmet>
+
       <h2 className="community-heading">Explore Our Community</h2>
       <div className="community-wrapper">
         {communityData.map((item, index) => (

@@ -3,8 +3,8 @@
   color: #0a3dff;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* keeps columns evenly spaced */
-  align-items: flex-start;        /* align text at top */
+  justify-content: space-between;
+  align-items: flex-start;
   padding: 2rem 3rem;
   box-sizing: border-box;
 }
@@ -12,8 +12,8 @@
 .footer-column {
   flex: 1 1 160px;
   display: flex;
-  flex-direction: column; /* stack heading and links vertically */
-  align-items: flex-start; /* left-align all content */
+  flex-direction: column;
+  align-items: flex-start;
   margin-bottom: 1.5rem;
 }
 
@@ -49,7 +49,7 @@
   display: flex;
   gap: 1rem;
   margin-top: 0.8rem;
-  align-items: center; /* align icons with text baseline */
+  align-items: center;
 }
 
 .footer-social a {
@@ -70,19 +70,61 @@
   width: 100%;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
+/* ✅ Responsive: scale down but keep layout */
+@media (max-width: 758px) {
   .footer {
-    flex-direction: column;
-    padding: 2rem 1.5rem;
-    gap: 2rem;
+    padding: 1.5rem 1.2rem;
   }
-  
-  .footer-column {
-    width: 100%;
+
+  .footer-column h4 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .footer-column ul li {
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
   }
 
   .footer-social {
-    justify-content: flex-start;
+    gap: 0.8rem;
+  }
+
+  .footer-social a {
+    font-size: 1.1rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.75rem;
+  }
+}
+
+/* ✅ Extra small phones */
+@media (max-width: 480px) {
+  .footer {
+    padding: 1rem;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .footer-column {
+    flex: 1 1 120px;
+    margin-bottom: 1rem;
+  }
+
+  .footer-column h4 {
+    font-size: 0.95rem;
+  }
+
+  .footer-column ul li {
+    font-size: 0.75rem;
+  }
+
+  .footer-social a {
+    font-size: 1rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.7rem;
   }
 }

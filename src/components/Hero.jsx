@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { Helmet } from "react-helmet"; // ✅ import Helmet
 import "../styles/Hero.css";
 import dpiitImg from "../assets/dpiit registration.png";
 import gstImg from "../assets/gst registration.png";
@@ -35,13 +36,25 @@ const Hero = () => {
   const next = () => setCurrent((prev) => (prev + 1) % images.length);
   const prev = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
 
-  // ✅ Navigate to Services page (hash route)
   const goToServices = () => {
     window.location.hash = "#/services";
   };
 
   return (
     <section className="hero-section" ref={ref}>
+      {/* ✅ SEO for Hero section */}
+      <Helmet>
+        <title>Propel Foundry | Startup Growth Partner</title>
+        <meta
+          name="description"
+          content="Propel Foundry helps startups launch, scale, and succeed with mentorship, training, compliance guidance, and investor networking."
+        />
+        <meta
+          name="keywords"
+          content="startup growth, mentorship, training programs, business registration, networking, startup funding, IPR compliance"
+        />
+      </Helmet>
+
       <motion.div
         className="hero-content"
         initial={{ opacity: 0, y: 40 }}
@@ -56,7 +69,7 @@ const Hero = () => {
         <motion.button
           whileHover={{ scale: 1.05 }}
           className="hero-button"
-          onClick={goToServices} // ✅ Works with your hash router
+          onClick={goToServices}
         >
           Explore Our Services
         </motion.button>

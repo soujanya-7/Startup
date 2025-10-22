@@ -104,11 +104,12 @@
 }
 
 /* Responsive */
+/* Responsive */
 @media (max-width: 1015px) {
   .training-wrapper {
     flex-direction: column;
     align-items: center;
-    gap: 3.5rem;
+    gap: 2rem; /* reduced from 3.5rem to tighten space */
   }
 
   .training-image-wrapper,
@@ -119,6 +120,7 @@
   .training-image {
     aspect-ratio: auto;
     width: 100%;
+    margin-bottom: 1rem; /* adds small balanced space under image */
   }
 }
 
@@ -129,14 +131,21 @@
 
   .training-subheading {
     font-size: 1.4rem;
+    margin-bottom: 0.8rem; /* slightly closer to heading */
   }
 
   .training-points li {
     font-size: 1.1rem;
+    margin-bottom: 0.4rem; /* tighter list spacing */
   }
 
   .training-button {
     padding: 0.7rem 1.5rem;
     font-size: 0.95rem;
+    margin-top: 1rem; /* clean spacing below text */
+  }
+
+  .training-wrapper {
+    gap: 1.5rem; /* smaller overall gap on mobile */
   }
 }
