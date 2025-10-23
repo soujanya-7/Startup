@@ -1,9 +1,9 @@
 .faq-section {
   padding: 6rem 2rem;
-  background: #ffffff;
   max-width: 900px;
   margin: 0 auto;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff; /* optional, depending on your page bg */
 }
 
 .faq-heading {
@@ -26,22 +26,26 @@
 .faq-item {
   border-bottom: 1px solid #ddd;
   padding: 1.5rem 0;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, border-radius 0.3s ease;
+  background: transparent; /* Ensure no white background covers content */
 }
 
 .faq-item:hover {
-  background: #f7faff;
+  background: #f7faff; /* Light hover effect */
   border-radius: 8px;
 }
 
 .faq-question {
-  display: flex;
+  display: flex; /* Fix layout issue */
   justify-content: space-between;
+  align-items: center;
   font-size: 1.4rem;
   font-weight: 600;
   cursor: pointer;
   color: #0040ff;
   transition: color 0.3s ease;
+  background: transparent;
+  border: none;
 }
 
 .faq-question:hover {
