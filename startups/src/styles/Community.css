@@ -9,13 +9,13 @@
   font-size: 3rem;
   font-weight: 800;
   color: #0a47ff;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem; /* 🔥 reduced from 4rem to 2rem */
 }
 
 .community-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 3rem; /* 🔥 reduced from 5rem to 3rem */
 }
 
 .community-item {
@@ -30,8 +30,8 @@
 
 .community-image-wrapper {
   flex: 1;
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 500px;
   overflow: hidden;
   border-radius: 25px;
 }
@@ -78,6 +78,9 @@
   font-size: 1rem;
   border-radius: 12px;
   cursor: pointer;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
   transition: all 0.3s ease;
 }
 
@@ -100,6 +103,7 @@
 @media (max-width: 640px) {
   .community-heading {
     font-size: 2rem;
+    margin-bottom: 1.5rem; /* 🔥 slightly reduced */
   }
 
   .community-content h3 {

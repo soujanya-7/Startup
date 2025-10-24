@@ -1,10 +1,24 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "../styles/About.css";
+import { Helmet } from "react-helmet"; // Import Helmet
 
 const About = () => {
   return (
     <>
+      {/* Helmet for SEO */}
+      <Helmet>
+        <title>About Us | Propel Foundry - Startup Mentorship & Training</title>
+        <meta
+          name="description"
+          content="Propel Foundry empowers startups with mentorship, training, and a strong network. Learn about our vision, mission, values, and impact in supporting founders."
+        />
+        <meta
+          name="keywords"
+          content="Propel Foundry, startup mentorship, startup training, startup support, startup accelerator, startup growth, entrepreneur network"
+        />
+      </Helmet>
+
       <section className="about-hero" id="about">
         <div className="about-hero-inner">
           <motion.h1
@@ -27,17 +41,18 @@ const About = () => {
           </motion.p>
         </div>
       </section>
+
       <section className="about-section">
         <div className="about-container">
           <div className="about-grid">
             {[
               {
-                title: "Our Mission",
+                title: "Our Vision",
                 text:
                   "To accelerate founders with the right knowledge, network, and tools to build impactful companies.",
               },
               {
-                title: "What We Do",
+                title: "Mission",
                 text:
                   "Registration, compliance, mentorship, training, and investor-ready preparation through curated programs.",
               },
@@ -62,6 +77,7 @@ const About = () => {
           </div>
         </div>
       </section>
+
       <section className="about-stats">
         <div className="about-stats-container">
           {[
@@ -83,6 +99,7 @@ const About = () => {
           ))}
         </div>
       </section>
+
       <section className="about-timeline">
         <div className="timeline-inner">
           {[
@@ -107,6 +124,7 @@ const About = () => {
           ))}
         </div>
       </section>
+
       <section className="about-cta">
         <motion.div
           className="about-cta-card"

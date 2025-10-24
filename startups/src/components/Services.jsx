@@ -12,6 +12,9 @@ import {
   FaTrophy 
 } from "react-icons/fa";
 
+// Import Helmet for SEO meta tags
+import { Helmet } from "react-helmet";
+
 const servicesData = [
   {
     icon: <FaRegLightbulb />,
@@ -50,36 +53,51 @@ const servicesData = [
   },
   {
     icon: <FaTrophy />,
-    title: "Hackathon Participation",
+    title: "Winning Hackathon",
     description: "We help startups showcase solutions and participate in hackathons for real-world impact.",
   },
 ];
 
 const Services = () => {
   return (
-    <section className="services-section" id="services">
-      <h2 className="services-heading">Our Services</h2>
-      <p className="services-subheading">
-        We provide end-to-end support for startups, from registration and mentorship to growth and networking.
-      </p>
-      <div className="services-grid">
-        {servicesData.map((service, index) => (
-          <motion.div
-            key={index}
-            className="service-card"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.15 }}
-          >
-            <div className="service-icon">{service.icon}</div>
-            <h3 className="service-title">{service.title}</h3>
-            <p className="service-description">{service.description}</p>
-            <button className="service-button">Learn More</button>
-          </motion.div>
-        ))}
-      </div>
-    </section>
+    <>
+      {/* Helmet for SEO */}
+      <Helmet>
+        <title>Services | Propel Foundry Startup Consulting</title>
+        <meta
+          name="description"
+          content="Explore Propel Foundry services including startup consulting, company registration, IPR compliance, R&D training, and mentorship programs in India."
+        />
+        <meta
+          name="keywords"
+          content="startup consulting, company registration, IPR services, R&D training, mentorship programs"
+        />
+      </Helmet>
+
+      <section className="services-section" id="services">
+        <h2 className="services-heading">Our Services</h2>
+        <p className="services-subheading">
+          We provide end-to-end support for startups, from registration and mentorship to growth and networking.
+        </p>
+        <div className="services-grid">
+          {servicesData.map((service, index) => (
+            <motion.div
+              key={index}
+              className="service-card"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+            >
+              <div className="service-icon">{service.icon}</div>
+              <h3 className="service-title">{service.title}</h3>
+              <p className="service-description">{service.description}</p>
+              <button className="service-button">Learn More</button>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+    </>
   );
 };
 
