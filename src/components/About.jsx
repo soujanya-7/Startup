@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "../styles/About.css";
-import { Helmet } from "react-helmet"; // Import Helmet
+import { Helmet } from "react-helmet-async"; // Import Helmet
 
 const About = () => {
   return (

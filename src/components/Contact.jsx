@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import emailjs from "@emailjs/browser";
 import "../styles/Contact.css";
 import { FaGlobe, FaLinkedin, FaInstagram, FaWhatsapp } from "react-icons/fa";
