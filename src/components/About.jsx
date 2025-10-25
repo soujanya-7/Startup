@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import "../styles/About.css";
 import { Helmet } from "react-helmet-async"; // Import Helmet
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -135,7 +136,7 @@ const About = () => {
         >
           <h1>Ready to partner with us?</h1>
           <p>Join our community, find mentors, and accelerate your journey today.</p>
-          <a href="#/contact" className="about-cta-button">Contact Us</a>
+          <Link to="/contact" className="about-cta-button">Contact Us</Link>
         </motion.div>
       </section>
     </>

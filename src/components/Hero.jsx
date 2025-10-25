@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Helmet } from "react-helmet-async"; // ✅ import Helmet
@@ -13,6 +14,7 @@ const images = [dpiitImg, gstImg, mentoringImg, networkingImg, fundingImg];
 
 const Hero = () => {
   const [current, setCurrent] = useState(0);
+  const navigate = useNavigate();
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
   // Auto-slide every 5 seconds
@@ -37,7 +39,7 @@ const Hero = () => {
   const prev = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
 
   const goToServices = () => {
-    window.location.hash = "#/services";
+    navigate("/services");
   };
 
   return (

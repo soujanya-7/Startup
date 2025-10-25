@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import "../styles/CTA.css";
 
 const CTA = () => {
+  const navigate = useNavigate();
   return (
     <section className="cta-section" id="cta">
       {/* SEO / Meta */}
@@ -24,7 +26,7 @@ const CTA = () => {
       </p>
       <button
         className="cta-button"
-        onClick={() => window.location.hash = "#contact"}
+        onClick={() => navigate("/contact")}
         aria-label="Book a consultation with Propel Foundry"
       >
         Book a Consultation
