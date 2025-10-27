@@ -13,7 +13,7 @@ const MainPage = () => {
     <>
       {/* SEO Meta */}
       <Helmet>
-        <title>Propel Foundry | Your Startup Growth Partner</title>
+        <title>Propel Foundry | <h1>Your Startup Growth Partner</h1></title>
         <meta
           name="description"
           content="Propel Foundry helps startups launch, scale, and succeed with expert mentorship, training, and community support."
