@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import "../styles/Footer.css";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 
@@ -68,11 +68,11 @@ const Footer = () => {
       <div className="footer-column">
         <h4>Platform</h4>
         <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#tools">Tools</a></li>
-          <li><a href="#plans">Plans</a></li>
-          <li><a href="#faq">Help</a></li>
-          <li><a href="#contact">Connect</a></li>
+          <li><a href="hero">Home</a></li>
+          <li><a href="tools">Tools</a></li>
+          <li><a href="plans">Plans</a></li>
+          <li><a href="faq">Help</a></li>
+          <li><a href="contact">Connect</a></li>
         </ul>
       </div>
 

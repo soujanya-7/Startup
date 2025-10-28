@@ -9,6 +9,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Services from "./components/Services";
 import Community from "./components/Community";
+import Opportunities from "./components/Opportunities";
 
 function App() {
   const [route, setRoute] = useState(window.location.hash || "#/");
@@ -38,6 +39,8 @@ function App() {
         return <Services />;
       case "#/community":
         return <Community />;
+      case "#/opportunities":
+        return <Opportunities />;
       default:
         return (
           <>
@@ -45,6 +48,7 @@ function App() {
             <Training />
             <CTA />
             <FAQ />
+            
           </>
         );
     }

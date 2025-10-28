@@ -13,7 +13,7 @@ import {
 } from "react-icons/fa";
 
 // Import Helmet for SEO meta tags
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const servicesData = [
   {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Helmet } from "react-helmet"; // ✅ import Helmet
+import { Helmet } from "react-helmet-async"; // ✅ import Helmet
 import "../styles/Hero.css";
 import dpiitImg from "../assets/dpiit registration.png";
 import gstImg from "../assets/gst registration.png";

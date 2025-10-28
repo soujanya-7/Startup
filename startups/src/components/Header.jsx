@@ -59,6 +59,7 @@ const Header = () => {
           <a href="#/home" className={activeSection === "home" ? "active" : ""}>Home</a>
           <a href="#/services" className={activeSection === "services" ? "active" : ""}>Services</a>
           <a href="#/community" className={activeSection === "community" ? "active" : ""}>Community</a>
+          <a href="#/opportunities" className={activeSection === "opportunities" ? "active" : ""}>Opportunities</a>
           <a href="#/contact" className={activeSection === "contact" ? "active" : ""}>Contact</a>
           <a href="#/about" className={activeSection === "about" ? "active" : ""}>About</a>
         </nav>

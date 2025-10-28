@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import "../styles/Community.css";
 import startupImg from "../assets/image.png";
 import mentorImg from "../assets/mentorship.jpg";
