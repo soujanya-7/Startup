@@ -1,0 +1,87 @@
+.opportunities-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f8faff;
+  min-height: 100vh;
+}
+
+.opp-title {
+  font-size: 2.5rem;
+  color: #0a3d62;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.opp-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.tab {
+  background-color: #dce8ff;
+  border: none;
+  color: #0a3d62;
+  font-size: 1rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.tab:hover {
+  background-color: #0a3d62;
+  color: #fff;
+}
+
+.tab.active {
+  background-color: #0a3d62;
+  color: #fff;
+}
+
+.opp-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.opp-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  width: 90%;
+  max-width: 450px;
+  transition: transform 0.3s ease;
+}
+
+.opp-card:hover {
+  transform: translateY(-5px);
+}
+
+.opp-image {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.opp-text {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.opp-text h3 {
+  color: #0a3d62;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.opp-text p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
