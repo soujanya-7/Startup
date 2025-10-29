@@ -1,44 +1,18 @@
 import React, { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import "../styles/Header.css";
 import logo from "../assets/img3.png";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
   const [activeSection, setActiveSection] = useState("home");
 
-  // Update active section on scroll
+  // Update active link on route change
   useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, []);
-
-  // Update active section based on URL hash on page load or refresh
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace("#/", "");
-      if (hash) setActiveSection(hash);
-    };
-
-    // Run on first load
-    handleHashChange();
-
-    // Listen for future hash changes (clicking links)
-    window.addEventListener("hashchange", handleHashChange);
-
-    return () => window.removeEventListener("hashchange", handleHashChange);
-  }, []);
+    const currentPath = location.pathname.replace("/", "");
+    setActiveSection(currentPath || "home");
+  }, [location]);
 
   return (
     <header className="header">
@@ -49,19 +23,31 @@ const Header = () => {
       <div className="header-right">
         <button
           className="header-menu-btn"
-          aria-label="Open menu"
-          onClick={() => setOpen((v) => !v)}
+          aria-label="Toggle menu"
+          onClick={() => setOpen((prev) => !prev)}
         >
           ≡
         </button>
 
         <nav className={`nav-links ${open ? "open" : ""}`} onClick={() => setOpen(false)}>
-          <a href="#/home" className={activeSection === "home" ? "active" : ""}>Home</a>
-          <a href="#/services" className={activeSection === "services" ? "active" : ""}>Services</a>
-          <a href="#/community" className={activeSection === "community" ? "active" : ""}>Community</a>
-          <a href="#/opportunities" className={activeSection === "opportunities" ? "active" : ""}>Opportunities</a>
-          <a href="#/contact" className={activeSection === "contact" ? "active" : ""}>Contact</a>
-          <a href="#/about" className={activeSection === "about" ? "active" : ""}>About</a>
+          <NavLink to="/home" className={activeSection === "home" ? "active" : ""}>
+            Home
+          </NavLink>
+          <NavLink to="/services" className={activeSection === "services" ? "active" : ""}>
+            Services
+          </NavLink>
+          <NavLink to="/community" className={activeSection === "community" ? "active" : ""}>
+            Community
+          </NavLink>
+          <NavLink to="/opportunities" className={activeSection === "opportunities" ? "active" : ""}>
+            Opportunities
+          </NavLink>
+          <NavLink to="/contact" className={activeSection === "contact" ? "active" : ""}>
+            Contact
+          </NavLink>
+          <NavLink to="/about" className={activeSection === "about" ? "active" : ""}>
+            About
+          </NavLink>
         </nav>
       </div>
     </header>
