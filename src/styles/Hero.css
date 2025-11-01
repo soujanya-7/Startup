@@ -3,20 +3,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0rem 5rem; /* 💥 Removed top padding */
+  padding: 1rem 5rem;
   background: linear-gradient(180deg, #f8fbff 0%, #eaf2ff 100%);
   min-height: 100vh;
   gap: 3rem;
   overflow: hidden;
-  margin-top: 0; /* 💥 Removes any external spacing */
+  padding-top: 0rem;
 }
 
 /* ===== Left Content ===== */
 .hero-content {
   flex: 1;
   max-width: 500px;
-  padding: 0; /* 💥 Removes any inner gap */
-  margin-top: 0;
+  padding: 1;
 }
 
 .hero-heading {
@@ -24,7 +23,7 @@
   font-weight: 800;
   line-height: 1.2;
   color: #0048ff;
-  margin: 0 0 1rem 0; /* 💥 No top margin */
+  margin-bottom: 1rem;
 }
 
 .highlight-text {
@@ -44,7 +43,6 @@
   margin-bottom: 2rem;
   font-size: 1rem;
   color: #222;
-  position: relative;
 }
 
 .hero-highlights p {
@@ -53,18 +51,18 @@
   gap: 0.5rem;
   margin: 0.4rem 0;
   font-weight: 500;
-  position: relative;
-  padding-left: 1.6rem; /* Aligns checkmark cleanly */
 }
 
 .hero-highlights p::before {
+  
   content: "✔";
   position: absolute;
   left: 0;
-  top: 0.1rem;
+  top: 0;
   color: #00bfff;
   font-weight: 700;
 }
+
 
 /* ===== Buttons ===== */
 .hero-buttons {
@@ -128,7 +126,7 @@
   transform: translateY(-50%);
   background: #0048ff;
   border: none;
-  color: #f7f9fd;
+  color: #f5f6f9;
   font-size: 1.8rem;
   cursor: pointer;
   border-radius: 50%;
@@ -179,7 +177,7 @@
   .hero-section {
     flex-direction: column-reverse;
     text-align: center;
-    padding: 0 2rem; /* 💥 No top padding even on tablet */
+    padding: 3rem 2rem;
   }
 
   .hero-content {
@@ -201,7 +199,7 @@
 
 @media (max-width: 640px) {
   .hero-section {
-    padding: 0 1.5rem; /* 💥 Still flush with header */
+    padding: 2.5rem 1.5rem;
   }
 
   .hero-heading {

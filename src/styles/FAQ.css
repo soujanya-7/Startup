@@ -60,6 +60,7 @@
   gap: 0.8rem;
   margin-bottom: 3rem;
   padding-top: 3rem;
+  font-size: 7rem;
 }
 
 .faq-category {
@@ -70,7 +71,9 @@
   cursor: pointer;
   font-weight: 500;
   transition: all 0.3s ease;
+  font-size: 0.9rem;
 }
+
 
 .faq-category:hover {
   border-color: #ff5e3a;
@@ -106,9 +109,9 @@
   border: none;
   width: 100%;
   text-align: left;
-  font-size: 1.05rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  color: #1e293b;
+  color: #0048ff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -123,8 +126,8 @@
 /* Answer */
 .faq-answer {
   margin-top: 0.5rem;
-  color: #475569;
-  font-size: 0.95rem;
+  color: #fb2803;
+  font-size: 1.29rem;
   line-height: 1.6;
   animation: fadeIn 0.3s ease-in-out;
 }

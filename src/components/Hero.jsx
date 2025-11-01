@@ -76,11 +76,11 @@ const Hero = () => {
           From strategy and compliance to funding and mentorship — we’re with you at every step.
         </p>
 
-        <div className="hero-highlights">
+        {/* <div className="hero-highlights">
           <p>End-to-end startup support from idea to funding</p>
           <p>Access to investors, mentors & global networks</p>
           <p>Tailored business strategies for your vision</p>
-        </div>
+        </div> */}
 
         <div className="hero-buttons">
           <motion.button

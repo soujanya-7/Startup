@@ -5,81 +5,51 @@ import logo from "../assets/img3.png";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const [activeSection, setActiveSection] = useState("home");
 
-  // Update active link on route change
+  // Handle scroll effect
   useEffect(() => {
-    const currentPath = location.pathname.replace("/", "");
-    setActiveSection(currentPath || "home");
-  }, [location]);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const toggleMenu = () => setOpen((prev) => !prev);
 
   return (
-    <header className="header">
+    <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <div className="header-container">
-        {/* === Left: Logo === */}
-        <div className="header-left">
-          <Link to="/home" className="header-logo-link">
-            <img
-              src={logo}
-              alt="Propel Foundry Logo"
-              className="header-logo-img"
-            />
-          </Link>
+        {/* === Logo === */}
+        <Link to="/home" className="header-logo-link">
+          <img src={logo} alt="Propel Foundry Logo" className="header-logo-img" />
+        </Link>
+
+        {/* === Hamburger === */}
+        <div className={`hamburger ${open ? "active" : ""}`} onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
 
-        {/* === Right: Navigation + Menu === */}
-        <div className="header-right">
-          <button
-            className="header-menu-btn"
-            aria-label="Toggle menu"
-            onClick={() => setOpen((prev) => !prev)}
-          >
-            ☰
-          </button>
-
-          <nav
-            className={`nav-links ${open ? "open" : ""}`}
-            onClick={() => setOpen(false)}
-          >
-            <NavLink
-              to="/home"
-              className={activeSection === "home" ? "active" : ""}
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/services"
-              className={activeSection === "services" ? "active" : ""}
-            >
-              Services
-            </NavLink>
-            <NavLink
-              to="/community"
-              className={activeSection === "community" ? "active" : ""}
-            >
-              Community
-            </NavLink>
-            <NavLink
-              to="/opportunities"
-              className={activeSection === "opportunities" ? "active" : ""}
-            >
-              Opportunities
-            </NavLink>
-            <NavLink
-              to="/contact"
-              className={activeSection === "contact" ? "active" : ""}
-            >
-              Contact
-            </NavLink>
-            <NavLink
-              to="/about"
-              className={activeSection === "about" ? "active" : ""}
-            >
-              About
-            </NavLink>
-          </nav>
-        </div>
+        {/* === Navigation === */}
+        <nav className={`header-nav ${open ? "active" : ""}`}>
+          <ul>
+            {["home", "services", "community", "opportunities", "contact", "about"].map((item) => (
+              <li key={item}>
+                <NavLink
+                  to={`/${item}`}
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                  onClick={() => setOpen(false)}
+                >
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </header>
   );
