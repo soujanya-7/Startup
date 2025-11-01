@@ -34,9 +34,9 @@
   transition: transform 0.5s ease;
 }
 
-.training-image-wrapper:hover .training-image {
+/* .training-image-wrapper:hover .training-image {
   transform: scale(1.05);
-}
+} */
 
 .training-content {
   flex: 1 1 500px;
