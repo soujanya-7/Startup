@@ -1,167 +1,160 @@
-/* ===== BASE HEADER ===== */
+/* ==========================
+   NAVBAR THEME VARIABLES
+========================== */
+:root {
+  --pf-bg: #ffffff;
+  --pf-text-dark: #222222;
+  --pf-subtext: #555555;
+  --pf-accent-orange: #ff5c33; /* from logo */
+  --pf-accent-blue: #007bff;   /* hover/link color */
+}
+
+/* ==========================
+   BASE HEADER
+========================== */
 .header {
   position: sticky;
   top: 0;
   width: 100%;
-  background: #ffffff;
+  background: var(--pf-bg);
+  box-shadow: 0 4px 8px rgba(2, 6, 23, 0.06);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+  z-index: 1000;
+  font-family: "Inter", "Roboto", sans-serif;
+  height: 68px; /* reduced height */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 4rem;
-  z-index: 1000;
-  box-sizing: border-box;
-  font-size: 1.1rem;
-  height: 120px;
-  box-shadow: 0 6px 14px rgba(2, 6, 23, 0.06);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
 }
 
-/* ===== ACTIVE LINK UNDERLINE ===== */
-.nav-links a.active {
+/* ==========================
+   CONTAINER
+========================== */
+.header-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, links right */
+  padding: 0 1.2rem; /* minimal padding for small breathing space */
+  box-sizing: border-box;
+}
+
+/* ==========================
+   LOGO SECTION
+========================== */
+.header-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.header-logo-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.header-logo-img {
+  width: 240px;
+  height: auto;
+  cursor: pointer;
+  margin-left: 80px; /* ensure logo hugs left edge */
+}
+
+/* ==========================
+   NAVIGATION LINKS
+========================== */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.2rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--pf-text-dark);
+  font-weight: 500;
   position: relative;
-  color: #0a6eff;
+  transition: color 0.25s ease, transform 0.15s ease;
+}
+
+.nav-links a:hover {
+  color: var(--pf-accent-blue);
+  transform: translateY(-4px);
+}
+
+.nav-links a.active {
+  color: var(--pf-accent-blue);
 }
 
 .nav-links a.active::after {
   content: "";
   position: absolute;
+  bottom: -6px;
   left: 0;
-  bottom: -4px;
   width: 100%;
-  height: 3px;
-  background-color: orange;
-  border-radius: 2px;
+  height: 2px;
+  background: var(--pf-accent-orange);
+  border-radius: 1px;
 }
 
-/* ===== LEFT SIDE LOGO ===== */
-.header-left {
-  display: flex;
-  align-items: center;
-}
-
-.header-logo-img {
-  width: 360px;
-  margin-right: 12px;
-  cursor: pointer;
-  height: auto;
-}
-
-.header-logo-text {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #0a6eff;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-}
-
-/* ===== RIGHT SIDE NAVIGATION ===== */
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  font-size: 20px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #0a6eff;
-  font-weight: 450;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #ff9900;
-}
-
-/* ===== CTA / BUTTON ===== */
-.header-button {
-  font-size: 1.1rem;
-  color: #0a6eff;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.header-button:hover {
-  transform: scale(1.05);
-}
-
-/* ===== MENU BUTTON (HAMBURGER) ===== */
+/* ==========================
+   MENU BUTTON (HAMBURGER)
+========================== */
 .header-menu-btn {
   display: none;
-  background: #ffffff;
+  background: transparent;
   border: 1px solid rgba(148, 163, 184, 0.25);
-  border-radius: 10px;
-  font-size: 28px;
+  border-radius: 8px;
+  font-size: 26px;
   cursor: pointer;
-  color: #0a6eff;
-  padding: 6px 10px;
-  box-shadow: 0 6px 16px rgba(2, 6, 23, 0.10);
-  transition: box-shadow 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+  color: var(--pf-accent-blue);
+  padding: 4px 10px;
+  transition: all 0.2s ease;
 }
 
 .header-menu-btn:hover {
-  box-shadow: 0 10px 22px rgba(2, 6, 23, 0.14);
+  box-shadow: 0 4px 12px rgba(2, 6, 23, 0.15);
   transform: translateY(-1px);
   border-color: rgba(148, 163, 184, 0.35);
 }
 
-/* ===== TABLET RESPONSIVE ===== */
+/* ==========================
+   RESPONSIVE
+========================== */
 @media (max-width: 1024px) {
-  .header {
-    padding: 1rem 2rem;
-    height: auto;
-  }
-
-  .header-logo-img {
-    width: 260px;
-  }
-
   .nav-links {
-    gap: 1.2rem;
-    font-size: 18px;
-  }
-
-  .header-right {
-    gap: 1.8rem;
+    gap: 1rem;
+    font-size: 0.95rem;
   }
 }
 
-/* ===== TABLET (collapsed menu) ===== */
 @media (max-width: 820px) {
-  .header {
+  .header-container {
     flex-direction: column;
     align-items: flex-start;
-    padding: 1.2rem 2rem;
-  }
-
-  .header-logo-img {
-    width: 220px;
+    padding: 0.8rem 1.2rem;
   }
 
   .header-menu-btn {
     display: block;
     position: absolute;
-    right: 20px;
-    top: 22px;
+    right: 18px;
+    top: 18px;
   }
 
   .nav-links {
     display: none;
     flex-direction: column;
-    gap: 0.4rem;
     position: absolute;
-    right: 16px;
-    top: 70px;
-    background: #ffffff;
+    right: 18px;
+    top: 62px;
+    background: var(--pf-bg);
     border: 1px solid rgba(148, 163, 184, 0.25);
     border-radius: 10px;
-    box-shadow: 0 12px 28px rgba(2, 6, 23, 0.12);
-    padding: 0.6rem;
+    box-shadow: 0 12px 24px rgba(2, 6, 23, 0.12);
+    padding: 0.8rem;
     z-index: 1100;
     min-width: 160px;
   }
@@ -171,39 +164,27 @@
   }
 
   .nav-links a {
-    padding: 8px 12px;
-    display: block;
+    padding: 8px 10px;
+    width: 100%;
   }
 }
 
-/* ===== SMALL SCREENS / PHONES ===== */
 @media (max-width: 500px) {
-  .header {
-    padding: 0.8rem 1.2rem;
-    height: auto;
+  .header-container {
+    padding: 0.6rem 1rem;
   }
-
   .header-logo-img {
-    width: 160px;
+    width: 120px;
   }
-
-  .header-logo-text {
-    font-size: 1.3rem;
-  }
-
   .nav-links {
     right: 10px;
-    top: 60px;
-    min-width: 140px;
+    top: 54px;
   }
-
   .nav-links a {
     font-size: 0.9rem;
-    padding: 6px 10px;
   }
-
   .header-menu-btn {
-    font-size: 24px;
-    padding: 4px 8px;
+    font-size: 22px;
   }
 }
+ 

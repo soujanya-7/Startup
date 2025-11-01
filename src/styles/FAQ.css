@@ -1,74 +1,173 @@
+/* ===== FAQ Section (Updated) ===== */
 .faq-section {
-  padding: 6rem 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fff; /* optional, depending on your page bg */
+  background: linear-gradient(180deg, #f9fbff 0%, #eef4ff 100%);
+  min-height: 100vh;
+  padding: 5rem 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.faq-heading {
-  text-align: center;
-  font-size: 2.8rem;
-  color: #0a6eff;
+/* Title */
+.faq-title {
+  font-size: 3.3rem;
   font-weight: 700;
+  color: #0048ff;
   margin-bottom: 2rem;
-  letter-spacing: 0.5px;
-}
-
-.faq-subtext {
   text-align: center;
-  font-size: 1.3rem;
-  color: #444;
+}
+
+/* Controls (Search + Filters) */
+.faq-controls {
+  position: relative;
+  margin-bottom: 2rem;
+  width: 40%;
+  min-width: 280px;
+}
+
+.faq-search {
+  width: 100%;
+  padding: 0.8rem 3rem 0.8rem 1.2rem;
+  border: 1.8px solid #cbd5e1;
+  border-radius: 40px;
+  font-size: 1rem;
+  background: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 72, 255, 0.08);
+}
+
+.faq-search:focus {
+  border-color: #0048ff;
+  box-shadow: 0 0 0 3px rgba(0, 72, 255, 0.1);
+}
+
+.faq-search-icon {
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #0048ff;
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+/* FAQ Category Buttons */
+.faq-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
   margin-bottom: 3rem;
-  line-height: 1.6;
+  padding-top: 3rem;
 }
 
+.faq-category {
+  background: #fff;
+  border: 1.8px solid #cbd5e1;
+  border-radius: 30px;
+  padding: 0.6rem 1.3rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.faq-category:hover {
+  border-color: #ff5e3a;
+  color: #ff5e3a;
+}
+
+.faq-category.active {
+  background: linear-gradient(135deg, #0048ff, #ff5e3a);
+  color: white;
+  border: none;
+  box-shadow: 0 5px 12px rgba(0, 72, 255, 0.25);
+}
+
+/* FAQ List */
+.faq-list {
+  max-width: 900px;
+  width: 100%;
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 72, 255, 0.08);
+}
+
+/* FAQ Item */
 .faq-item {
-  border-bottom: 1px solid #ddd;
-  padding: 1.5rem 0;
-  transition: background 0.3s ease, border-radius 0.3s ease;
-  background: transparent; /* Ensure no white background covers content */
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1rem 0;
 }
 
-.faq-item:hover {
-  background: #f7faff; /* Light hover effect */
-  border-radius: 8px;
-}
-
+/* FAQ Question */
 .faq-question {
-  display: flex; /* Fix layout issue */
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1e293b;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.4rem;
-  font-weight: 600;
   cursor: pointer;
-  color: #0040ff;
   transition: color 0.3s ease;
-  background: transparent;
-  border: none;
 }
 
 .faq-question:hover {
-  color: #002db3;
+  color: #0048ff;
 }
 
+/* Answer */
 .faq-answer {
-  font-size: 1.15rem;
-  color: #333;
-  margin-top: 0.7rem;
-  line-height: 1.8;
-  letter-spacing: 0.2px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.4s ease, color 0.4s ease;
+  margin-top: 0.5rem;
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
-.faq-answer.open {
-  max-height: 500px;
-  padding-top: 0.8rem;
+/* No Results Text */
+.faq-no-results {
+  text-align: center;
+  color: #64748b;
+  font-style: italic;
+  margin-top: 2rem;
 }
 
-.faq-answer p {
-  margin: 0;
-  padding-right: 1rem;
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 3rem 2rem;
+  }
+
+  .faq-controls {
+    width: 90%;
+  }
+
+  .faq-search {
+    font-size: 0.9rem;
+  }
+
+  .faq-list {
+    padding: 1.5rem;
+  }
+
+  .faq-category {
+    font-size: 0.9rem;
+  }
 }
