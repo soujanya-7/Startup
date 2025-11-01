@@ -74,7 +74,7 @@ const Services = () => {
         />
       </Helmet>
 
-      <section className="services-section" id="services">
+      <section className="services-section">
         <h2 className="services-heading">Our Services</h2>
         <p className="services-subheading">
           We provide end-to-end support for startups, from registration and mentorship to growth and networking.

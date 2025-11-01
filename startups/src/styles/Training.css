@@ -1,35 +1,41 @@
+/* 🌟 Overall Section */
 .training-section {
-  padding: 6rem 2rem;
+  padding: 5rem 2rem 4rem;
   background: #f7f9fc;
 }
 
+/* ✨ Title Styling */
 .training-heading {
   text-align: center;
-  font-size: 3.5rem;
+  font-family: "Poppins", sans-serif; /* modern professional font */
+  font-size: 3rem;
   color: #0a47ff;
   font-weight: 800;
-  margin-bottom: 4.5rem;
+  margin-bottom: 2rem; /* reduced gap */
 }
 
+/* ⚙️ Layout */
 .training-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5rem;
+  gap: 3rem; /* tighter gap */
   max-width: 1300px;
   margin: 0 auto;
   flex-wrap: wrap;
 }
 
+/* 🖼️ Image Section */
 .training-image-wrapper {
-  flex: 1 1 500px;
-  max-width: 550px;
+  flex: 1 1 600px;
+  max-width: 600px;
 }
 
 .training-image {
-  width: 90%;
+  width: 100%;
+  height: auto;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   transition: transform 0.5s ease;
 }
@@ -38,40 +44,42 @@
   transform: scale(1.05);
 }
 
+/* 🧠 Content */
 .training-content {
   flex: 1 1 500px;
-  max-width: 650px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
+/* 🗒️ Description */
 .training-subheading {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   color: #4a5568;
-  line-height: 1.9;
-  margin-bottom: 2.5rem;
+  line-height: 1.8;
+  margin-bottom: 1.8rem; /* reduced gap from 2.5rem */
   max-width: 550px;
+  text-align: center;
 }
 
-/* keep points aligned left */
+/* 📋 Points */
 .training-points {
   list-style: none;
   padding: 0;
   margin-bottom: 2rem;
   width: 100%;
   max-width: 500px;
-  text-align: left; /* ensure left alignment */
+  text-align: left;
 }
 
 .training-points li {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #4a5568;
   padding-left: 1rem;
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .training-points li::before {
@@ -82,70 +90,60 @@
   font-size: 1.5rem;
 }
 
-/* Shorter and centered button */
+/* 🔘 Button */
 .training-button {
-  padding: 0.8rem 1.8rem;
-  background: #fff;
-  color: #0a47ff;
-  border: 2px solid #0a47ff;
-  border-radius: 12px;
+  padding: 0.9rem 2rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
   cursor: pointer;
-  font-weight: 400;
+  font-weight: 600;
   transition: all 0.3s ease;
   font-size: 1rem;
   display: block;
-  margin: 0 auto;
+  margin: 1rem auto 0;
+  box-shadow: 0 6px 16px rgba(0, 123, 255, 0.3);
 }
 
 .training-button:hover {
-  background: #0a47ff;
-  color: #fff;
-  transform: scale(1.05);
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 86, 179, 0.4);
 }
 
-/* Responsive */
-/* Responsive */
+/* 📱 Responsive */
 @media (max-width: 1015px) {
   .training-wrapper {
     flex-direction: column;
     align-items: center;
-    gap: 2rem; /* reduced from 3.5rem to tighten space */
-  }
-
-  .training-image-wrapper,
-  .training-content {
-    max-width: 100%;
+    gap: 2rem;
   }
 
   .training-image {
-    aspect-ratio: auto;
     width: 100%;
-    margin-bottom: 1rem; /* adds small balanced space under image */
+  }
+
+  .training-subheading {
+    text-align: center;
   }
 }
 
 @media (max-width: 640px) {
   .training-heading {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
   }
 
   .training-subheading {
-    font-size: 1.4rem;
-    margin-bottom: 0.8rem; /* slightly closer to heading */
+    font-size: 1.1rem;
   }
 
   .training-points li {
-    font-size: 1.1rem;
-    margin-bottom: 0.4rem; /* tighter list spacing */
+    font-size: 1rem;
   }
 
   .training-button {
-    padding: 0.7rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     font-size: 0.95rem;
-    margin-top: 1rem; /* clean spacing below text */
-  }
-
-  .training-wrapper {
-    gap: 1.5rem; /* smaller overall gap on mobile */
   }
 }

@@ -39,6 +39,7 @@
   display: flex; /* Fix layout issue */
   justify-content: space-between;
   align-items: center;
+  width: 100%; /* Make the button span full row so the + goes to the end */
   font-size: 1.4rem;
   font-weight: 600;
   cursor: pointer;
@@ -46,6 +47,12 @@
   transition: color 0.3s ease;
   background: transparent;
   border: none;
+}
+
+/* Ensure the +/− icon hugs the far right */
+.faq-question > span[aria-hidden="true"] {
+  margin-left: auto;
+  flex: 0 0 auto;
 }
 
 .faq-question:hover {

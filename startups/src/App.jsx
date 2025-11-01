@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Training from "./components/Training";
@@ -10,56 +11,36 @@ import Contact from "./components/Contact";
 import Services from "./components/Services";
 import Community from "./components/Community";
 import Opportunities from "./components/Opportunities";
+import EventDetail from "./components/EventDetail";
+import NotFound from "./components/404pagenotfount";
 
 function App() {
-  const [route, setRoute] = useState(window.location.hash || "#/");
-
-  // Listen for hash changes
-  useEffect(() => {
-    const onHashChange = () => setRoute(window.location.hash || "#/");
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
-  }, []);
-
-  // Smooth scroll to top on route change
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    }
-  }, [route]);
-
-  // Render components based on current route
-  const renderRoute = () => {
-    switch (route) {
-      case "#/about":
-        return <About />;
-      case "#/contact":
-        return <Contact />;
-      case "#/services":
-        return <Services />;
-      case "#/community":
-        return <Community />;
-      case "#/opportunities":
-        return <Opportunities />;
-      default:
-        return (
-          <>
-            <Hero />
-            <Training />
-            <CTA />
-            <FAQ />
-            
-          </>
-        );
-    }
-  };
-
   return (
-    <div>
+    <Router>
       <Header />
-      {renderRoute()}
+      <Routes>
+        <Route path="/" element={<Navigate to="/home" replace />} />
+        <Route
+          path="/home"
+          element={
+            <>
+              <Hero />
+              <Training />
+              <CTA />
+              <FAQ />
+            </>
+          }
+        />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/community" element={<Community />} />
+        <Route path="/opportunities" element={<Opportunities />} />
+        <Route path="/event/:id" element={<EventDetail />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
       <Footer />
-    </div>
+    </Router>
   );
 }
 

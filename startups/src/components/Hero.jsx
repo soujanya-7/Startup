@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Helmet } from "react-helmet-async"; // ✅ import Helmet
+import { Helmet } from "react-helmet-async";
 import "../styles/Hero.css";
+
 import dpiitImg from "../assets/dpiit registration.png";
 import gstImg from "../assets/gst registration.png";
 import mentoringImg from "../assets/mentoring.png";
@@ -13,17 +15,20 @@ const images = [dpiitImg, gstImg, mentoringImg, networkingImg, fundingImg];
 
 const Hero = () => {
   const [current, setCurrent] = useState(0);
+  const navigate = useNavigate();
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
+  const [paused, setPaused] = useState(false);
 
-  // Auto-slide every 5 seconds
+  // ✅ Auto-slide every 5s but pause on hover
   useEffect(() => {
+    if (paused) return;
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [paused]);
 
-  // Keyboard arrow navigation
+  // Keyboard navigation
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "ArrowRight") setCurrent((prev) => (prev + 1) % images.length);
@@ -36,22 +41,21 @@ const Hero = () => {
   const next = () => setCurrent((prev) => (prev + 1) % images.length);
   const prev = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
 
-  const goToServices = () => {
-    window.location.hash = "#/services";
-  };
+  const goToServices = () => navigate("/services");
+  const goToContact = () => navigate("/contact");
 
   return (
-    <section className="hero-section" ref={ref}>
-      {/* ✅ SEO for Hero section */}
+    <section
+      className="hero-section"
+      ref={ref}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
       <Helmet>
         <title>Propel Foundry | Startup Growth Partner</title>
         <meta
           name="description"
           content="Propel Foundry helps startups launch, scale, and succeed with mentorship, training, compliance guidance, and investor networking."
-        />
-        <meta
-          name="keywords"
-          content="startup growth, mentorship, training programs, business registration, networking, startup funding, IPR compliance"
         />
       </Helmet>
 
@@ -66,16 +70,41 @@ const Hero = () => {
           We help founders launch, scale, and succeed with strategic guidance, expert mentorship, and a powerful network.
         </p>
 
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          className="hero-button"
-          onClick={goToServices}
-        >
-          Explore Our Services
-        </motion.button>
+          {/* ✨ NEW HIGHLIGHT BLOCK
+          <div className="hero-highlights">
+            <p className="highlight">🚀 End-to-end startup support from idea to funding</p>
+            <p className="highlight">💼 Access to investors, mentors & resources</p>
+            <p className="highlight">🧠 Personalized business strategy for your vision</p>
+          </div> */}
+
+        {/* ✨ Optional small tagline */}
+        <p className="hero-tagline">Empowering founders to turn ideas into impact.</p>
+
+       {/* 🎯 Dual Buttons */}
+<div className="hero-buttons">
+  <motion.button
+    whileHover={{ scale: 1.05 }}
+    className="hero-button primary"
+    onClick={goToServices}
+  >
+    Explore Our Services
+  </motion.button>
+  <motion.button
+    whileHover={{ scale: 1.05 }}
+    className="hero-button secondary"
+    onClick={goToContact}
+  >
+    Book an Appointment
+  </motion.button>
+</div>
       </motion.div>
 
-      <div className="hero-image-slider">
+      {/* ✅ Image carousel */}
+      <div
+        className="hero-image-slider"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
         <AnimatePresence mode="wait">
           {inView && (
             <motion.img
@@ -91,24 +120,17 @@ const Hero = () => {
           )}
         </AnimatePresence>
 
-        <button className="hero-arrow left" onClick={prev} aria-label="Previous">
-          &#8592;
-        </button>
-        <button className="hero-arrow right" onClick={next} aria-label="Next">
-          &#8594;
-        </button>
+        <button className="hero-arrow left" onClick={prev}>&#8592;</button>
+        <button className="hero-arrow right" onClick={next}>&#8594;</button>
 
-        <div className="hero-dots" role="tablist" aria-label="Slideshow Dots">
+        <div className="hero-dots">
           {images.map((_, idx) => (
             <button
               key={idx}
               className={`dot ${idx === current ? "active" : ""}`}
-              aria-label={`Go to slide ${idx + 1}`}
-              aria-selected={idx === current}
-              type="button"
               onClick={() => setCurrent(idx)}
             >
-              <span className="progress" aria-hidden="true" />
+              <span className="progress" />
             </button>
           ))}
         </div>
