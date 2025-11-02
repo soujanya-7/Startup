@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Helmet } from "react-helmet-async";
 import "../styles/Hero.css";
+import RotatingText from "./RotatingText"; // 🌀 Import the rotating text
 
 import dpiitImg from "../assets/dpiit registration.png";
 import gstImg from "../assets/gst registration.png";
@@ -19,7 +20,7 @@ const Hero = () => {
   const navigate = useNavigate();
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
-  // 🔁 Auto slide every 5s
+  // 🔁 Auto slide
   useEffect(() => {
     if (paused) return;
     const interval = setInterval(() => {
@@ -28,7 +29,7 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, [paused]);
 
-  // ⌨️ Keyboard navigation
+  // ⌨️ Keyboard nav
   useEffect(() => {
     const handleKey = (e) => {
       if (e.key === "ArrowRight") setCurrent((prev) => (prev + 1) % images.length);
@@ -59,28 +60,23 @@ const Hero = () => {
         />
       </Helmet>
 
-      {/* === Left Side Content === */}
+      {/* === Left Content === */}
       <motion.div
         className="hero-content"
         initial={{ opacity: 0, y: 40 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-        <h1 className="hero-heading">
-          Empowering Startups <br />
-          to <span className="highlight-text">Launch & Grow</span>
-        </h1>
+      <h1 className="hero-heading">
+  Empowering Startups to{" "}
+  <RotatingText texts={["Launch", "Grow", "Scale", "Succeed"]} />
+</h1>
+
 
         <p className="hero-subtext">
           Propel Foundry partners with ambitious founders to transform bold ideas into thriving ventures.  
           From strategy and compliance to funding and mentorship — we’re with you at every step.
         </p>
-
-        {/* <div className="hero-highlights">
-          <p>End-to-end startup support from idea to funding</p>
-          <p>Access to investors, mentors & global networks</p>
-          <p>Tailored business strategies for your vision</p>
-        </div> */}
 
         <div className="hero-buttons">
           <motion.button
@@ -103,7 +99,7 @@ const Hero = () => {
         </div>
       </motion.div>
 
-      {/* === Right Side Carousel === */}
+      {/* === Right Carousel === */}
       <div
         className="hero-image-slider"
         onMouseEnter={() => setPaused(true)}
@@ -125,10 +121,10 @@ const Hero = () => {
           )}
         </AnimatePresence>
 
-        <button className="hero-arrow left" onClick={prev} aria-label="Previous Image">
+        <button className="hero-arrow left" onClick={prev} aria-label="Previous">
           &#8592;
         </button>
-        <button className="hero-arrow right" onClick={next} aria-label="Next Image">
+        <button className="hero-arrow right" onClick={next} aria-label="Next">
           &#8594;
         </button>
 

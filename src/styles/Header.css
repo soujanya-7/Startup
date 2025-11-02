@@ -1,49 +1,57 @@
 /* ==========================
-   HEADER BASE
-========================== */
-/* ==========================
-   HEADER BASE (Perfect Match with Hero)
+   HEADER BASE (Aligned + Seamless with Hero)
 ========================== */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 999;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 1rem 4rem;
-height: 55px;
-  /* ✅ Exact same gradient as Hero section */
-  box-shadow: none;
-  transition: background 0.5s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+  align-items: center;
+  padding: 1em 0;
+  background: transparent; /* or rgba(255,255,255,0.1) for glass effect */
+  backdrop-filter: blur(6px);
 }
 
-/* When scrolling — make it solid white with blur */
+/* .header-pillnav {
+  position: relative;
+  z-index: 1000;
+} */
+
+
+/* When scrolling */
 .header.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(8px);
 }
-
 
 /* ==========================
    CONTAINER
 ========================== */
 .header-container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1380px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 /* ==========================
-   LOGO
+   LOGO — Now flushed left
 ========================== */
+.header-logo-link {
+  display: flex;
+  align-items: center;
+}
+
 .header-logo-img {
-  width: 245px;
+  width: 250px;
+  height: auto;
+  object-fit: contain;
+  margin-left: -50px; /* ✅ Ensures logo hugs left */
   transition: transform 0.3s ease;
 }
 
@@ -52,7 +60,7 @@ height: 55px;
 }
 
 /* ==========================
-   NAV LINKS
+   NAVIGATION
 ========================== */
 .header-nav ul {
   display: flex;
@@ -66,8 +74,8 @@ height: 55px;
 .header-nav ul li a {
   text-decoration: none;
   color: #1a1a1a;
-  font-weight: 500;
-  font-size: 1.05rem;
+  font-weight: 550;
+  font-size: 1.rem;
   position: relative;
   transition: color 0.3s ease;
 }
@@ -76,7 +84,6 @@ height: 55px;
   color: #007bff;
 }
 
-/* Active link with gradient text and underline */
 .header-nav ul li a.active {
   background: linear-gradient(90deg, #007bff, #ff5c33);
   -webkit-background-clip: text;
@@ -127,7 +134,7 @@ height: 55px;
 }
 
 /* ==========================
-   RESPONSIVE
+   RESPONSIVE NAV
 ========================== */
 @media (max-width: 850px) {
   .hamburger {
@@ -171,21 +178,5 @@ height: 55px;
 
   .header-logo-img {
     width: 150px;
-  }
-}
-.header.scrolled {
-  opacity: 0.98;
-  transform: translateY(0);
-  animation: fadeSlide 0.4s ease forwards;
-}
-
-@keyframes fadeSlide {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }

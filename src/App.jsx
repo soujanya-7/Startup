@@ -13,24 +13,31 @@ import Community from "./components/Community";
 import Opportunities from "./components/Opportunities";
 import EventDetail from "./components/EventDetail";
 import NotFound from "./components/404pagenotfount";
+import CommunitySection from "./components/CommunitySection"; // ✅ new import
 
 function App() {
   return (
     <Router>
       <Header />
       <Routes>
+        {/* Redirect root (/) to /home */}
         <Route path="/" element={<Navigate to="/home" replace />} />
+
+        {/* ✅ Landing Page with Community Section preview */}
         <Route
           path="/home"
           element={
             <>
               <Hero />
               <Training />
+              <CommunitySection /> {/* 💫 added preview section */}
               <CTA />
               <FAQ />
             </>
           }
         />
+
+        {/* Other Routes */}
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />

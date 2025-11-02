@@ -22,7 +22,7 @@ const CTA = () => {
 
       <h2 className="cta-heading">Ready to Propel Your Startup?</h2>
       <p className="cta-subtext">
-        Let’s get started today!
+        
       </p>
       <button
         className="cta-button"

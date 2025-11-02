@@ -17,7 +17,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-top">
           <div className="footer-logo">
-            <h3>Propel Foundry</h3>
+            <h3>PropelFoundry</h3>
             <p>Empowering startups with mentorship, funding & global connections.</p>
             <div className="footer-social">
               <a href="#"><FaFacebookF /></a>

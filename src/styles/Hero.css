@@ -3,13 +3,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5rem;
+  padding: 1rem 8rem;
   background: linear-gradient(180deg, #f8fbff 0%, #eaf2ff 100%);
   min-height: 100vh;
   gap: 3rem;
   overflow: hidden;
   padding-top: 0rem;
+  margin-top: -30px; /* ✅ Perfect offset for fixed header height */
 }
+
+
 
 /* ===== Left Content ===== */
 .hero-content {
@@ -27,7 +30,7 @@
 }
 
 .highlight-text {
-  background: linear-gradient(90deg, #0048ff, #00bfff);
+  background: linear-gradient(90deg, #0048ff, #ff5e3a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -218,4 +221,19 @@
   .hero-button {
     width: 100%;
   }
+}
+/* 🔁 Rotating Text Animation */
+.rotating-text {
+  display: inline-block;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(15px);
 }
